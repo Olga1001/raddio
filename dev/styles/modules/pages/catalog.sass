@@ -1,0 +1,139 @@
+
+.catalog
+    padding: 23px 0
+
+.content
+    width: calc(100% - 270px)
+    padding: 13px 0 13px 35px
+
+.sort 
+  display: flex 
+  flex-wrap: wrap
+  padding-top: 15px
+  padding-bottom: 10px
+  a
+    background-color: #f2f6f9
+    line-height: 28px 
+    font-size: 13px
+    font-weight: 400
+    text-transform: uppercase
+    letter-spacing: -0.005em
+    color: #b5c1ca
+    margin-right: 10px
+    padding: 0 10px
+    margin-top: 10px
+    &.active 
+      background-color: #ffd800
+      color: #2a2a2c
+      font-weight: 700
+
+.name
+    font-size: 20px
+    line-height: 1
+    font-weight: 700
+    letter-spacing: -0.005em
+    color: $black
+    margin-bottom: 10px
+
+.playlist 
+    display: flex 
+    width: 100% 
+    background-color: $bg-white
+    border: 1px solid #eaeef4
+    margin-bottom: 10px
+    img 
+        width: 117px 
+        flex-shrink: 0
+        background: #f2f6f9 url("../img/common/default.png") no-repeat center /contain
+    &-content 
+        padding: 20px 25px 15px
+        display: flex 
+        flex-direction: column
+        justify-content: space-between
+.fm
+    font-weight: 700
+    color: #000000
+    font-size: 12px
+    line-height: 10px
+    font-weight: 400
+    letter-spacing: -0.005em
+
+.country
+    position: relative 
+    padding-left: 22px
+    margin-left: 11px
+    color: $gray
+    font-size: 12px
+    line-height: 1
+    font-weight: 400
+    letter-spacing: -0.005em
+    &:before 
+        +before 
+        background-image: url("../img/flags/united-kingdom.svg")
+        +box(14px)
+
+.tags 
+    padding-left: 18px
+    position: relative 
+
+    &:before 
+        +before 
+        background-image: url("../img/icons/note.png")
+        +box(14px)
+
+.tag 
+    font-size: 12px
+    line-height: 1
+    font-weight: 400
+    letter-spacing: -0.005em
+    color: $gray
+    padding-right: 2px
+
+.btn-like
+    font-size: 11px
+    line-height: 1
+    font-weight: 700
+    letter-spacing: -0.005em
+    color: $white
+    padding: 3px 12px 3px 3px
+    background-color: #c6d5e0
+    border-radius: 12.5px
+    display: flex 
+    align-items: center
+    margin-left: 5px
+    span 
+        position: relative 
+        line-height: 19px 
+        background-color: #ffffff
+        border-radius: 9.5px
+        font-size: 12px
+        font-weight: 400
+        color: #8798a5
+        padding: 0 14px 0 24px
+        margin-right: 3px
+        
+        &:before 
+            +before 
+            background-image: url("../img/icons/heart2.svg")
+            +box(14px)
+            margin-left: 6px
+
+
+.likes, .views
+    position: relative
+    padding-left: 24px
+    display: flex 
+    align-items: center
+    margin-right: 10px
+    &:before 
+        +before 
+        +box(18px)
+.likes
+    &:before 
+        background-image: url("../img/icons/heart2.svg")
+.views
+    &:before 
+        background-image: url("../img/icons/play-button.svg")
+
+
+

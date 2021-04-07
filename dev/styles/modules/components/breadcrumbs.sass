@@ -1,0 +1,19 @@
+.breadcrumbs
+    display: flex 
+    align-items: center 
+    font-size: 12px
+    line-height: 1
+    font-weight: 400
+    letter-spacing: -0.005em
+    margin-bottom: 15px
+    a 
+        color: #595968
+        position: relative 
+        padding-right: 10px
+        margin-right: 5px
+        &:before 
+            content: '-'
+            +centerY
+            right: 0
+    p
+        color: #a0a4aa

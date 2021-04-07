@@ -1,0 +1,100 @@
+
+.sidebar
+    width: 270px 
+    background-color: #f9fbfc
+    padding: 21px 30px
+
+.filter
+    &-title 
+        font-size: 21px
+        line-height: 10px
+        font-weight: 700
+        text-transform: uppercase
+        color: $dark
+        border-top: 1px solid $yellow 
+        padding-top: 13px
+        width: fit-content
+
+.list
+    font-size: 16px
+    line-height: 20px
+    font-weight: 400
+    letter-spacing: -0.005em
+    padding-left: 10px
+    padding-top: 7px
+    &-item 
+        display: flex 
+        align-items: center
+        &:hover 
+            .arr-drop:before
+                background-image: url("../img/icons/arr-down-blue.png")
+    li 
+        margin-bottom: 2px
+        &:hover 
+            .drop-list 
+                display: block
+    ul.lv-1 li:hover 
+        .drop-list.lv-2 
+            display: block!important
+    p 
+        display: flex 
+        align-items: center
+    a
+        border-bottom: 1px solid $gray-700
+        color: $gray-700
+        transition: all 0.3s ease
+        line-height: 15px
+        display: flex 
+        align-items: center
+        &:hover 
+            border-bottom-color: transparent 
+            color: $blue-color
+            font-weight: 700
+    span
+        font-size: 13px
+        line-height: 24px
+        color: $gray-200
+
+.dash
+    font-size: 18px
+    line-height: 24px
+    color: $gray-100
+    margin: 0 7px
+    &.small 
+        font-size: 11px
+
+.btn-more
+    font-size: 13px
+    line-height: 10px
+    font-weight: 700
+    text-transform: uppercase
+    color: $gray-300
+    border-bottom: 1px solid $gray-300
+    position: relative
+    margin-left: 10px
+    margin-top: 15px
+    margin-bottom: 39px
+    &:before 
+        +before
+        left: calc(100% + 7px)
+        background: url("../img/icons/arr-more-down.png") no-repeat right center / contain
+        +box(9px) 
+
+    &.active:before 
+        transform: translateY(-50%) scaleY(-1)
+        
+
+.list .arr-drop:before
+    background-image: url("../img/icons/arr-more-down.png")
+
+.drop-list 
+    padding-left: 5px
+    display: none
+    transition: all 0.3s ease
+    &.lv-1
+        display: none
+        .lv-2
+            display: none!important
+    &.lv-2
+        display: none
+        padding-left: 0

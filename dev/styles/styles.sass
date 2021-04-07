@@ -1,0 +1,75 @@
+
+@import "utils/vars"
+@import "utils/mixins"
+@import "utils/fonts"
+@import "utils/sprite"
+@import "utils/base"
+
+  
+h1, .title1 
+  
+h2, .title2
+  position: relative
+  width: fit-content
+  font-size: 36px
+  line-height: 27px
+  font-weight: 400
+  text-transform: uppercase
+  color: $dark
+  &:before 
+    +before
+    background-image: url("../img/icons/category.png")
+    left: calc(100% + 14px)
+    +box(23px)
+
+.search
+  position: relative
+  margin-top: 15px
+  span 
+    font-size: 14px
+    line-height: 1
+    font-weight: 700
+    letter-spacing: -0.005em
+    color: $black
+    padding-left: 20px
+    display: block
+    position: relative
+    &:before 
+      +before 
+      background-image: url("../img/icons/search.svg")
+      +box(12px)
+
+  button 
+    position: absolute
+    right: 0 
+    top: 0
+    height: 100%
+    +d-flex(center)
+    background-color: #ffd800
+    border-radius: 17.5px
+    padding: 0 20px
+  &-filter 
+    input
+      padding: 9px 20px
+    button
+      width: 37px
+      &:before 
+        +before 
+        +centerXY
+        background-image: url("../img/icons/search.svg")
+        +box(12px)
+
+.text 
+  color: #5c5f62
+  margin-top: 13px 
+
+
+@import "modules/modules"
+
+.d-none
+  display: none
+
+// .relative
+//   position: relative
+
+@import "utils/media"

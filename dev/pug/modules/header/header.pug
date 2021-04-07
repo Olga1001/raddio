@@ -1,0 +1,24 @@
+header.header
+    .container 
+        .align-items-center
+            a.logo(href="#") 
+                img(src="img/logo/logo.png", alt="logo")
+                
+            nav.navmenu 
+                ul.menu 
+                    each val, index in [{icon: 'star', link: 'Top Station'},{icon: 'notes', link: 'Genres'},{icon: 'compass', link: 'Countries'},{icon: 'land', link: 'Languages'},]
+                        li.menu-item(class=index==0 ? 'ative': '')
+                            a(href="#" class="icon-"+val.icon)=val.link
+                            if (index == 2 || index == 3)
+                                span.arr
+                        if (index == 2 || index == 3)
+                            ul.submenu
+                                li
+                            
+            .align-items-center
+                a.btn-favorites(href="#") favorites
+                button.burger 
+                    span.burger-line.burger-line-top
+                    span.burger-line.burger-line-center
+                    span.burger-line.burger-line-bottom
+

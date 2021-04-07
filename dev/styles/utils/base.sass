@@ -1,0 +1,177 @@
+html 
+  font-family: "PTSans", sans-serif
+  font-size: 15px
+  line-height: 22px
+  height: 100%
+
+body 
+  height: 100%
+  scroll-behavior: smooth
+  text-rendering: optimizeSpeed
+  font-size: $base-font-size
+  line-height: 22px
+  font-weight: 400
+  font-family: "PTSans", sans-serif
+  font-style: normal
+  color: #5c5f62
+
+*, *::before, *::after
+  box-sizing: border-box
+
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button 
+  -webkit-appearance: none
+  margin: 0
+
+/* Firefox */
+input[type=number]
+  -moz-appearance: textfield
+
+input[type="date"]::-webkit-inner-spin-button, input[type="date"]::-webkit-calendar-picker-indicator
+  opacity: 0
+  -webkit-appearance: none
+  appearance: none
+
+input[type="date"]::-webkit-datetime-edit-year-field:not([aria-valuenow]), input[type="date"]::-webkit-datetime-edit-month-field:not([aria-valuenow]), input[type="date"]::-webkit-datetime-edit-day-field:not([aria-valuenow])
+  color: $black
+
+input[type="date"]
+  &::-webkit-input-placeholder, &:-moz-placeholder, &::-moz-placeholder, &:-ms-input-placeholder
+    font-family: 'PTSans', sans-serif
+    font-style: normal
+    font-weight: normal
+    font-size: 13px
+    line-height: 1
+    font-weight: 400
+    letter-spacing: -0.005em
+    color: $gray
+
+*::-webkit-input-placeholder
+  font-family: 'PTSans', sans-serif
+  font-style: normal
+  font-weight: normal
+  font-size: 13px
+  line-height: 1
+  font-weight: 400
+  letter-spacing: -0.005em
+  color: $gray
+
+*:-moz-placeholder
+  font-family: 'PTSans', sans-serif
+  font-style: normal
+  font-weight: normal
+  font-size: 13px
+  line-height: 1
+  font-weight: 400
+  letter-spacing: -0.005em
+  color: $gray
+
+*::-moz-placeholder
+  font-family: 'PTSans', sans-serif
+  font-style: normal
+  font-weight: normal
+  font-size: 13px
+  line-height: 1
+  font-weight: 400
+  letter-spacing: -0.005em
+  color: $gray
+
+*:-ms-input-placeholder
+  font-family: 'PTSans', sans-serif
+  font-style: normal
+  font-weight: normal
+  font-size: 13px
+  line-height: 1
+  font-weight: 400
+  letter-spacing: -0.005em
+  color: $gray
+
+body, h1, h2, h3, h4, h5, h6, p, ol, ul
+  margin: 0
+  padding: 0
+  font-weight: normal
+
+ol, ul
+  list-style: none
+
+ol
+  counter-reset: li
+
+img 
+  max-width: 100%
+  display: block
+  object-fit: contain
+
+input, button, textarea, select
+  font: inherit
+
+button 
+    padding: 0
+    cursor: pointer
+    border: none
+    
+audio, canvas, iframe, img, svg, video, textarea
+  vertical-align: middle
+
+svg 
+  flex-shrink: 0
+  fill: none
+  
+textarea
+  resize: none
+  width: 100%
+  outline: none
+  appearance: none
+
+section
+  position: relative
+
+input, select, button 
+  outline: none
+  background-color: transparent
+
+a 
+  text-decoration: none
+  transition: all 0.3s ease
+  color: $black
+  display: block
+  appearance: none
+  
+p
+  appearance: none
+
+p a 
+  display: inline 
+  font-family: "PTSans", sans-serif
+
+input, textarea
+  width: 100%
+  appearance: none
+  font-family: 'PTSans', sans-serif
+  font-style: normal
+  font-weight: normal
+  font-size: 13px
+  line-height: 1
+  font-weight: 400
+  letter-spacing: -0.005em
+  background-color: $bg-white
+  border: 1px solid #dfe6eb
+  border-radius: 17.5px
+  padding: 9px 30px
+
+table
+  border-spacing: 0
+  border-collapse: collapse
+  width: 100% 
+
+hr
+  border: none 
+  height: 1px 
+  margin: 20px 0
+
+
+.container 
+  max-width: $desktop
+  width: 100% 
+  margin: 0 auto 
+  padding: 0 15px
+

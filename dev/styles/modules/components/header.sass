@@ -1,0 +1,111 @@
+.header
+    padding: 13px 0 
+    background-color: #0068b2
+
+.navmenu
+    margin-right: auto 
+    display: block 
+
+.menu 
+    display: flex 
+    align-items: center 
+    &-item 
+        display: flex 
+        align-items: center
+        margin: 0 16px
+
+    a 
+        font-family: PTSans
+        font-size: 16px
+        line-height: 10px
+        font-weight: 700
+        text-transform: uppercase
+        letter-spacing: -0.01em
+        color: #fbf4fc
+        color: $white
+        position: relative 
+        &:before 
+            +before
+
+        &.icon-star
+            padding-left: 34px
+            &:before 
+                +box(24px)
+                background-image: url("../img/icons/star.png")
+        &.icon-notes
+            padding-left: 33px
+            &:before 
+                +box(23px)
+                background-image: url("../img/icons/notes.png")
+        &.icon-compass
+            padding-left: 39px
+            &:before 
+                +box(29px)
+                background-image: url("../img/icons/compass.png")
+        &.icon-land
+            padding-left: 40px
+            &:before 
+                +box(30px)
+                background-image: url("../img/icons/lang.png")
+        
+.logo 
+    margin-right: 54px 
+    margin-bottom: 14px
+
+.arr 
+    +box(10px,6px)
+    display: block
+    margin-left: 8px
+    position: relative 
+    &:before 
+        +before 
+        background: url("../img/icons/arr-down.png") no-repeat center / contain
+        +box(100%)
+
+
+.submenu 
+    display: none 
+
+.btn-favorites 
+    font-size: 16px
+    line-height: 24px
+    font-weight: 700
+    text-transform: uppercase
+    letter-spacing: -0.01em
+    color: #fbf4fc
+    background: url("../img/icons/heart.svg") no-repeat left center / contain
+    padding-left: 37px 
+
+.burger
+    +box(50px)
+    position: relative
+    flex-shrink: 0
+    z-index: 9
+    background: #F7F7F7
+    display: none
+    margin-left: 15px
+    border-radius: 3px
+    &-line
+        background-color: $black
+        +centerX
+        +box(18px,2px)
+        transition: all 0.3s ease
+        &-top
+            top: 18px
+        &-center
+            top: 50% 
+            transform: translate(-50%,-50%)
+        &-bottom
+            bottom: 18px
+    &.active 
+        position: fixed
+        top: 20px 
+        right: 15px
+        .burger-line-top
+            top: 50% 
+            transform: translate(-50%,-50%) rotate(227deg)
+        .burger-line-center
+            opacity: 0
+        .burger-line-bottom
+            top: 50% 
+            transform: translate(-50%,-50%) rotate(-227deg)
