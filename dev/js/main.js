@@ -18,7 +18,8 @@ btnMore.forEach(function (item) {
     item.addEventListener('click', () => {
         var siblings = item.previousElementSibling;
         var child = siblings.children;
-
+        // var listVisibleLength = child.classList.contains('isVisible');
+        // console.log(listVisibleLength);
         item.classList.toggle('close');
 
         for (var i = 12; i < child.length; i++) {
@@ -31,4 +32,3 @@ btnMore.forEach(function (item) {
         }
     });
 });
-

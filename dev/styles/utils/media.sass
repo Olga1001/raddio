@@ -6,16 +6,98 @@
  
 
 @media only screen and (min-width : 576px)
-    // .flex-sm-row
-    //     flex-direction: row
+    .flex-sm-center-between
+        +d-flex(space-between, center)
 
 @media only screen and (min-width : 992px)
     // .d-lg-block
     //     display: block
     // .d-lg-flex 
     //     display: flex
+@media only screen and (min-width : 768px)
+    .d-md-block
+        display: block
 
 @media only screen and (max-width : 991px)
-    //
+    .burger
+        display: block
+    .navmenu
+        display: none
+    .logo
+        margin-right: auto
+    .content 
+        padding-left: 10px
+        width: calc(100% - 240px)
+    .sidebar 
+        width: 240px
+        padding: 21px 15px
+@media only screen and (max-width : 767px)
+    .btn-filter
+        display: block
+    .sidebar 
+        display: none
+    .content 
+        width: 100% 
+        padding-left: 0
+    .sort
+        padding: 20px 0
 @media only screen and (max-width : 575px)
-    //
+    .page
+        &:nth-child(4), &:nth-child(5), &:nth-child(6), &:nth-child(7), &:nth-child(8)
+            display: none
+    .fm, .country 
+        width: 100% 
+        margin-left: 0
+    .playlist-content 
+        padding: 10px 15px 10px
+    .btn-favorites 
+        +box(30px)
+        padding: 0
+        span 
+            display: none
+    .logo
+        max-width: 160px
+        margin-bottom: 10px
+    input, textarea
+        padding: 9px 20px
+    .search button
+        width: 37px 
+        padding: 0  
+        span
+            color: transparent
+            +box(14px)
+            padding: 0  
+    .btn-filter 
+        margin-bottom: 20px
+    .sort 
+        padding: 10px 0
+
+@media only screen and (max-width : 374px)
+    .name
+        font-size: 14px
+    .country, .fm, .tag
+        font-size: 10px
+    .tags, .country
+        padding-left: 15px
+        &:before 
+            +box(10px)
+    .likes, .views
+        font-size: 9px
+        &:before 
+            +box(14px)
+    .btn-like
+        font-size: 9px
+        span 
+            font-size: 9px
+            line-height: 15px
+            padding: 0 10px 0 20px
+            &:before 
+                +box(10px)
+    .playlist img
+        width: 90px
+    .playlist
+        margin-bottom: 5px
+    .page a 
+        font-size: 16px
+        line-height: 38px
+        min-width: 24px

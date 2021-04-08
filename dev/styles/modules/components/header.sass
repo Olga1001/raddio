@@ -24,6 +24,7 @@
         color: #fbf4fc
         color: $white
         position: relative 
+        white-space: nowrap
         &:before 
             +before
 
@@ -77,26 +78,26 @@
     padding-left: 37px 
 
 .burger
-    +box(50px)
+    +box(40px)
     position: relative
     flex-shrink: 0
     z-index: 9
-    background: #F7F7F7
+    background: #ffd800 
     display: none
     margin-left: 15px
     border-radius: 3px
     &-line
         background-color: $black
         +centerX
-        +box(18px,2px)
+        +box(20px,2px)
         transition: all 0.3s ease
         &-top
-            top: 18px
+            top: 13px
         &-center
             top: 50% 
             transform: translate(-50%,-50%)
         &-bottom
-            bottom: 18px
+            bottom: 13px
     &.active 
         position: fixed
         top: 20px 

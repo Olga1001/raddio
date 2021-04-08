@@ -12,3 +12,103 @@ mixin breadcrumbs-item(text,href)
 			a(href=href)=text
 		else
 			p=text
+
+mixin pagination(adjacents, numPages, display, currentPage, base, arrow)
+	- adjacents = (adjacents || 1) * 1;
+	- numPages = (numPages || 10) * 1;
+	- currentPage = (currentPage || 1) * 1;
+	- base = base || '#';
+	- display = (display || 7) * 1;
+
+	nav.pagination.flex-center-between
+		if (arrows === arrows)
+			a.pagination-back.disabled(href="#" title="Prev page")
+				.arrow-left.arrow
+				span.d-md-block.d-none Back
+		ul.align-items-center
+			if numPages < display + adjacents * 2
+				- var p = 1;
+				while p <= numPages
+					if currentPage == p
+						li.active
+							a(href=base + p)
+								| #{p}
+					else
+						li.page
+							a(href=base + p)
+								| #{p}
+					- p++;
+			else if numPages >= 7 + adjacents * 2
+				if currentPage < 1 + adjacents * 3
+					- var p = 1;
+					while p < display - 3 + adjacents * 2
+						if currentPage == p
+							li.page.active
+								a(href=base + p)
+									| #{p}
+						else
+							li.page
+								a(href=base + p)
+									| #{p}
+						- p++;
+					li.page
+						a(href="#")
+							| &hellip;
+					li.page
+						a(href=base + numPages)
+							| #{numPages}
+				else if numPages - adjacents * 2 > currentPage && currentPage > adjacents * 2
+					li.page
+						a(href=base + 1)
+							| 1
+					li.page
+						a(href=base + 2)
+							| 2
+					li.page
+						a(href="#")
+							| &hellip;
+					- var p = currentPage - adjacents;
+					while p <= currentPage + adjacents
+						if currentPage == p
+							li.active
+								a(href=base + p)
+									| #{p}
+						else
+							li.page
+								a(href=base + p)
+									| #{p}
+						- p++;
+					li.page
+						a(href="#")
+							| &hellip;
+					li.page
+						a(href=base + (numPages - 1))
+							| #{numPages - 1}
+					li.page
+						a(href=base + numPages)
+							| #{numPages}
+				else
+					li.page
+						a(href=base + 1)
+							| 1
+					li.page
+						a(href=base + 2)
+							| 2
+					li.page
+						a(href="#")
+							| &hellip;
+					- var p = numPages - (1 + (adjacents * 3));
+					while p <= numPages
+						if currentPage == p
+							li.active
+								a(href=base + p)
+									| #{p}
+						else
+							li.page
+								a(href=base + p)
+									| #{p}
+					- p++;
+		if (arrows === arrows)
+			a.pagination-next(href="#" title="Next page")
+				span.d-md-block.d-none Next
+				.arrow-right.arrow

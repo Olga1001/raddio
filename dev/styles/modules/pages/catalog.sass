@@ -10,7 +10,7 @@
   display: flex 
   flex-wrap: wrap
   padding-top: 15px
-  padding-bottom: 23px
+  padding-bottom: 18px
   a
     background-color: #f2f6f9
     line-height: 28px 
@@ -34,6 +34,8 @@
     letter-spacing: -0.005em
     color: $black
     margin-bottom: 10px
+    &:hover 
+        color: #0069b3
 
 .playlist 
     display: flex 
@@ -41,22 +43,31 @@
     background-color: $bg-white
     border: 1px solid #eaeef4
     margin-bottom: 10px
+    position: relative
+    a 
+        flex-shrink: 0
     img 
         width: 117px 
+        height: 100%
         flex-shrink: 0
-        background: #f2f6f9 url("../img/common/default.png") no-repeat center /contain
+        background: #f2f6f9 url("../img/common/default.png") no-repeat center / contain
+        
     &-content 
-        padding: 20px 25px 15px
+        padding: 19px 25px 13px
         display: flex 
         flex-direction: column
         justify-content: space-between
+    &-info 
+        align-items: center
+
 .fm
     font-weight: 700
     color: #000000
     font-size: 12px
     line-height: 10px
-    font-weight: 400
     letter-spacing: -0.005em
+    margin-left: 6px
+    margin-bottom: 5px
 
 .country
     position: relative 
@@ -67,14 +78,16 @@
     line-height: 1
     font-weight: 400
     letter-spacing: -0.005em
+    margin-bottom: 5px
     &:before 
         +before 
         background-image: url("../img/flags/united-kingdom.svg")
         +box(14px)
 
 .tags 
-    padding-left: 18px
+    padding-left: 22px
     position: relative 
+    margin-bottom: 5px
 
     &:before 
         +before 
@@ -100,7 +113,6 @@
     border-radius: 12.5px
     display: flex 
     align-items: center
-    margin-left: 5px
     span 
         position: relative 
         line-height: 19px 
@@ -125,15 +137,30 @@
     display: flex 
     align-items: center
     margin-right: 10px
+    font-size: 11px
+    line-height: 1
+    font-weight: 400
+    letter-spacing: -0.005em
+    color: #37373a
+    margin-bottom: 6px
+    margin-top: 6px
     &:before 
         +before 
         +box(18px)
 .likes
+    padding-right: 5px
     &:before 
         background-image: url("../img/icons/heart2.svg")
 .views
     &:before 
         background-image: url("../img/icons/play-button.svg")
 
+.btn-filter
+    margin-top: 10px
+    background: #ffd800 url("../img/icons/filter.svg") no-repeat center / 15px
+    color: #2a2a2c
+    font-weight: 700
+    +box(30px,28px)
+    display: none
 
 

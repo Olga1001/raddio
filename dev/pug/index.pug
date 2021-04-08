@@ -15,7 +15,7 @@ block content
 							button(type="sumbit")
 						ul.list 
 							each val, index in [{link: 'Rock', count: '92'},{link: 'RnB', count: '110'},{link: 'Alternative', count: '90'},{link: 'Country', count: '31'},{link: 'Pop', count: '1'},{link: 'Top 40', count: '4'},{link: 'Classic', count: '40'},{link: 'Jazz', count: '32'},{link: 'Soul', count: '92'}, {link: 'Dance', count: '22'}, {link: 'Arabic', count: '1'}, {link: 'Blues', count: '3'}, {link: 'Dance', count: '22'}, {link: 'Arabic', count: '1'}, {link: 'Blues', count: '3'}]
-								li
+								li(class=index > 11 ? 'd-none': 'isVisible')
 									.list-item
 										a(href="#")=val.link
 										p 
@@ -24,13 +24,13 @@ block content
 						button.btn-more(type="button") show more
 					.filter
 						p.filter-title COUNTRY
-						
+
 						form.search.search-filter 
 							input(type="text")
 							button(type="sumbit")
 						ul.list 
 							each val, index in [{link: 'United States', count: '92'},{link: 'Danmark', count: '99'},{link: 'Deutschland', count: '988'},{link: 'France', count: '92'},{link: 'Belgie', count: '81'},{link: 'Espana', count: '932'},{link: 'Canada', count: '331'},{link: 'Australia', count: '22'},{link: 'Espana', count: '932'},{link: 'Canada', count: '331'},{link: 'Australia', count: '22'},{link: 'Espana', count: '932'},{link: 'Canada', count: '331'},{link: 'Australia', count: '22'}]
-								li
+								li(class=index > 8 ? 'd-none': 'isVisible')
 									.list-item
 										if (index == 3)
 											a(href="#")=val.link
@@ -71,6 +71,28 @@ block content
 																			span.dash.small —
 																			=val.count
 						button.btn-more(type="button") show more
+					.filter
+						p.filter-title Languages
+
+						form.search.search-filter 
+							input(type="text")
+							button(type="sumbit")
+						ul.list 
+							each val, index in [{link: 'Algeria', count: '32'},{link: 'Argentina', count: '92'},{link: 'Bangladesh', count: '33'},{link: 'Bolivia', count: '778'},{link: 'Bosnia and Herzegovina', count: '1'},{link: 'Brasil', count: '2'},{link: 'Bulgaria', count: '32'}]
+								li(class=index > 7 ? 'd-none': 'isVisible')
+									.list-item
+										if (index == 3)
+											a(href="#")=val.link
+											.arr.arr-drop
+											p
+												span.dash.small —
+												=val.count
+										else
+											a(href="#")=val.link
+											p
+												span.dash —
+												=val.count
+						button.btn-more(type="button") show more
 				.content
 					nav
 						ul.breadcrumbs
@@ -83,22 +105,24 @@ block content
 						button(type="sumbit")
 							span Search
 					p.text Alternative rock also called alternative music, alt-rock or simply alternative is a genre of rock music that emerged from the independent music underground of the 1980s and became widely popular in the 1990s and 2000s. In this instance, the word "alternative" refers to the genre's distinction from mainstream rock music.
-					ul.sort 
-						each val, index in ['new','most liked','listening now']
-							li 
-								a(href="#" class=index==0 ? 'active': '')=val
+					.flex-sm-center-between
+						ul.sort 
+							each val, index in ['new','most liked','listening now']
+								li 
+									a(href="#" class=index==0 ? 'active': '')=val
+						button.btn-filter(type="button") 
 
 					ul.playlists 
 						-var n = 9
 						while n--
 							li.playlist 
 								a(href="#") 
-									img(src="img/common/sloy_78_1207.jpg", alt="img")
+									img(src="img/common/sloy_78_1207.jpg" alt="img")
 								.playlist-content 
 									div
 										a.name(href="#") GotRadio - Classic Hits
 										.flex-wrap
-											
+
 											.align-items-center.tags
 												a.tag(href="#") Chillout, 
 												a.tag(href="#") Relax
@@ -110,8 +134,10 @@ block content
 										button.btn-like(type="button")
 											span.align-items-center like
 											| 298
+								
+					+pagination(adjacents, 280, 10, currentPage, base, arrow)
 
 
 
 
-		
+
