@@ -3,6 +3,9 @@ extends layout/main
 block variables
 	-var title = 'catalog 2'
 
+block link
+	link(rel="stylesheet" type='text/css' href="css/mediaelementplayer.min.css")
+
 block content
 	main.catalog
 		.container 
@@ -113,7 +116,7 @@ block content
 						button.btn-filter(type="button") 
 
 					ul.playlists 
-						-var n = 9
+						-var n = 8
 						while n--
 							li.playlist 
 								a(href="#") 
@@ -134,8 +137,55 @@ block content
 										button.btn-like(type="button")
 											span.align-items-center like
 											| 298
-								
+								button.btn-play(type="button" data-href="http://www.largesound.com/ashborytour/sound/AshboryBYU.mp3")
+						li.playlist 
+							a(href="#") 
+								img(src="img/common/sloy_78_1207.jpg" alt="img")
+							.playlist-content 
+								div
+									a.name(href="#") GotRadio - Classic Hits
+									.flex-wrap
+
+										.align-items-center.tags
+											a.tag(href="#") Chillout, 
+											a.tag(href="#") Relax
+										a.country(href="#") United Kingdom, London 
+										p.fm 104.2 FM
+								.flex-wrap.playlist-info
+									.views 1 980
+									.likes 8 900
+									button.btn-like(type="button")
+										span.align-items-center like
+										| 298
+							button.btn-play(type="button" data-href="phonk_mix_2021_night_drive_playlist_3_-5134525337228790328.mp3")
+
 					+pagination(adjacents, 280, 10, currentPage, base, arrow)
+
+	include modules/footer/footer
+	.players
+		.container
+			.media-wrapper
+				.players-item.players-side
+					img(src="img/common/sloy_78_1207.jpg", alt="img")
+					div 
+						a(href="#") GotRadio - Classic Hits
+						p What's Love Got To Do With It - Tina Turner
+
+				.players-action
+					button.prev.arrow-player(type="button")
+
+					audio#audio(preload='none' controls='' aria-label="1")
+						source(src='http://www.largesound.com/ashborytour/sound/AshboryBYU.mp3' type='audio/mp3')
+
+					button.next.arrow-player(type="button")
+				.players-side
+					button.btn-favorites(type="button")
+
+
+block script
+	script(src="js/mediaelement-and-player.min.js")
+	script(src='js/audio.js')
+
 
 
 

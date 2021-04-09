@@ -1,0 +1,176 @@
+.players 
+    position: sticky
+    bottom: 0
+    background-color: #293643
+    padding: 8px 0
+    overflow: hidden
+
+.mejs__horizontal-volume-current
+    background-color: #ffc000
+.mejs__horizontal-volume-handle
+    background-color: #d0d9df
+
+.mejs__button 
+    button
+        position: relative
+        border-radius: 50% 
+        +box(50px)
+        background: #ffd800 
+        margin: 0
+        outline: none
+        &:before 
+            content: ''
+            +centerXY
+    &.mejs__play > button:before 
+        width: 0
+        height: 0
+        border-style: solid
+        border-width: 12.5px 0 12.5px 17px
+        border-color: transparent transparent transparent #293643
+        margin-left: 3px
+    &.mejs__pause > button:before 
+        +box(20px)
+        background-color: #293643
+    &.mejs__volume-button
+        +centerY 
+        right: 0
+        z-index: 3
+        button 
+
+            border-radius: 50%
+            +box(36px)
+            z-index: 1
+            background: #202c37 url("../img/icons/sound.png") no-repeat center / 26px 23px
+
+.mejs__button, .mejs__time, .mejs__time-rail, .mejs__controls
+    height: fit-content
+    padding: 0!important
+
+.mejs__button, .mejs__time, .mejs__controls
+    width: auto
+    
+.mejs__container, .mejs__controls:not([style*="display: none"])
+    background: transparent!important
+    padding: 0
+
+.mejs__controls 
+    display: flex 
+    align-items: center
+
+.mejs__container
+    height: fit-content!important
+    width: fit-content!important
+    min-width: fit-content!important
+
+.media-wrapper 
+    +d-flex(space-between, center)
+    position: relative
+    .btn-favorites
+        padding-left: 0
+        background-size: 24px 22px
+        background-position-x: center
+        +box(36px)
+        margin-right: 51px
+        background-image: url("../img/icons/heart3.svg  ")
+    
+    * 
+        position: initial
+        padding: 0
+
+    .mejs__time-current, .mejs__time-loaded, .mejs__time-handle
+        position: absolute
+    .mejs__time-handle
+        margin-top: -10px
+    .mejs__time-current
+        background-color: #ffc000
+    .mejs__horizontal-volume-total
+        width: 62px
+        margin-left: 36px
+    .mejs__horizontal-volume-slider
+        position: absolute!important
+        right: 0
+        +centerY
+        width: 36px
+        div
+            border-radius: 3px
+            height: 6px
+            z-index: -1
+            position: absolute
+
+.mejs__offscreen
+    display: none
+
+.mejs__time
+    display: none
+
+.arrow-player
+    position: relative
+    background-color: #41505e
+    +box(36px)
+    border-radius: 50%
+    margin: 0 24px
+    &:before 
+        +before
+        +centerXY
+        background-image: url("../img/icons/right-arrow-long.svg")
+        +box(16px)
+        background-position-x: center
+    &.prev 
+        transform: scaleX(-1)
+
+.players-item
+    img
+        +box(45px)
+        margin-right: 18px
+        flex-shrink: 0
+    a 
+        font-size: 18px
+        line-height: 1
+        font-weight: 700
+        letter-spacing: -0.005em
+        color: $white 
+        margin-bottom: 8px
+        white-space: nowrap
+        text-overflow: ellipsis
+        overflow: hidden
+    p 
+        font-size: 12px
+        line-height: 1
+        font-weight: 400
+        letter-spacing: -0.005em
+        color: #a4a9b0
+        white-space: nowrap
+        text-overflow: ellipsis
+        overflow: hidden
+
+.players-action
+    display: flex 
+    align-items: center 
+
+.mejs__time-rail
+    position: absolute
+    bottom: calc(100% + 2px)
+    left: 0
+    width: 100%
+    height: 6px
+    margin: 0
+
+.players-side
+    width: 33.33%
+    display: flex 
+    align-items: center
+
+.mejs__time-total
+    margin-top: 0
+    background-color: transparent
+
+.mejs__time-buffering, .mejs__time-current, .mejs__time-float, .mejs__time-float-corner, .mejs__time-float-current, .mejs__time-hovered, .mejs__time-loaded, .mejs__time-marker, .mejs__time-total
+    height: 6px
+
+.mejs__time-loaded
+    background-color: $gray
+
+.mejs__time-handle
+    display: none
+
+        

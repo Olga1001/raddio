@@ -10,6 +10,8 @@
         +d-flex(space-between, center)
 
 @media only screen and (min-width : 992px)
+    .players-side:last-child
+        justify-content: flex-end
     // .d-lg-block
     //     display: block
     // .d-lg-flex 
@@ -31,6 +33,9 @@
     .sidebar 
         width: 240px
         padding: 21px 15px
+    .players-side
+        width: fit-content 
+        max-width: 300px
 @media only screen and (max-width : 767px)
     .btn-filter
         display: block
@@ -41,6 +46,25 @@
         padding-left: 0
     .sort
         padding: 20px 0
+    .media-wrapper
+        flex-wrap: wrap
+    .mejs__button.mejs__volume-button
+        position: absolute
+        top: auto 
+        right: auto
+        bottom: 0
+        transform: none
+        left: 46px
+    .arrow-player.next 
+        margin-right: 0
+    .players-side:last-child
+        width: 100%
+    .media-wrapper .mejs__horizontal-volume-slider
+        right: auto 
+        left: 43px
+        top: auto
+        transform: none
+        bottom: 0
 @media only screen and (max-width : 575px)
     .page
         &:nth-child(4), &:nth-child(5), &:nth-child(6), &:nth-child(7), &:nth-child(8)
@@ -71,7 +95,12 @@
         margin-bottom: 20px
     .sort 
         padding: 10px 0
-
+    .players-action
+        width: 100% 
+        margin-top: 10px
+        justify-content: center
+    .arrow-player.prev
+        margin-left: 0
 @media only screen and (max-width : 374px)
     .name
         font-size: 14px
