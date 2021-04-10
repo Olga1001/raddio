@@ -4,21 +4,21 @@ header.header
             a.logo(href="#") 
                 img(src="img/logo/logo.png", alt="logo")
                 
-            nav.navmenu 
+            nav.navmenu(data-item="menu" data-close)  
                 ul.menu 
                     each val, index in [{icon: 'star', link: 'Top Station'},{icon: 'notes', link: 'Genres'},{icon: 'compass', link: 'Countries'},{icon: 'land', link: 'Languages'},]
-                        li.menu-item(class=index==0 ? 'ative': '')
+                        li.menu-item(class=index==0 ? 'active': '')
                             a(href="#" class="icon-"+val.icon)=val.link
+                                if (index == 2 || index == 3)
+                                    span.arr
                             if (index == 2 || index == 3)
-                                span.arr
-                        if (index == 2 || index == 3)
-                            ul.submenu
-                                li
+                                ul.submenu
+                                    li
                             
             .align-items-center
                 a.btn-favorites(href="#") 
                     span favorites
-                button.burger 
+                button.burger(data-open="menu") 
                     span.burger-line.burger-line-top
                     span.burger-line.burger-line-center
                     span.burger-line.burger-line-bottom

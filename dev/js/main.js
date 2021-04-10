@@ -1,10 +1,18 @@
 
-var parentList = document.querySelectorAll('.list');
-var btnMore = document.querySelectorAll('.btn-more');
+var parentList = document.querySelectorAll('.list'),
+    btnMore = document.querySelectorAll('.btn-more'),
+    btnClose = document.querySelectorAll('[data-close]'),
+    btnOpen = document.querySelectorAll('[data-open]'),
+    modal = document.querySelectorAll('[data-item]'),
+    burger = document.querySelector('.burger');
 
 function hideList () {
     parentList.forEach(function (item) {
         var child = item.children;
+        
+        // var listVisibleLength = child.classList.contains('isVisible');
+        // console.log(listVisibleLength.length);
+
         for (var i = 12; i < child.length; i++) {
             child[i].classList.add('d-none');
         }
@@ -18,13 +26,11 @@ btnMore.forEach(function (item) {
     item.addEventListener('click', () => {
         var siblings = item.previousElementSibling;
         var child = siblings.children;
-        // var listVisibleLength = child.classList.contains('isVisible');
-        // console.log(listVisibleLength);
-        item.classList.toggle('close');
+        item.classList.toggle('active');
 
         for (var i = 12; i < child.length; i++) {
             child[i].classList.toggle('d-none') ;
-            if (item.classList.contains('close')) {
+            if (item.classList.contains('active')) {
                 item.innerHTML = 'close';
             } else {
                 item.innerHTML = 'show more';
@@ -32,3 +38,35 @@ btnMore.forEach(function (item) {
         }
     });
 });
+
+document.querySelector('.menu').addEventListener('click', (e) => {
+    e.stopPropagation();
+});
+
+// open pop-ups
+btnOpen.forEach(function (item) {
+    item.addEventListener('click', () => {
+        var attributeValue = item.getAttribute('data-open');
+        modal.forEach(function (e) {
+            var attributeValueModal = e.getAttribute('data-item');
+           
+            if (attributeValueModal === attributeValue){
+                e.classList.toggle('active');
+                if (attributeValue === 'menu') {
+                  
+                    burger.classList.toggle('active');
+                }
+            }
+        });
+    });
+});
+
+
+btnClose.forEach(function (item) {
+    item.addEventListener('click', () => {
+        modal.forEach(function (e) {
+            e.classList.remove('active');
+        });
+    });
+});
+

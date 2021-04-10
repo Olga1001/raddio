@@ -31,6 +31,10 @@
     &.mejs__pause > button:before 
         +box(20px)
         background-color: #293643
+    &.mejs__replay > button:before
+        +box(50px)
+        background: url("../img/icons/refresh.svg") no-repeat center / 30px
+
     &.mejs__volume-button
         +centerY 
         right: 0
@@ -41,7 +45,7 @@
             +box(36px)
             z-index: 1
             background: #202c37 url("../img/icons/sound.png") no-repeat center / 26px 23px
-
+    
 .mejs__button, .mejs__time, .mejs__time-rail, .mejs__controls
     height: fit-content
     padding: 0!important

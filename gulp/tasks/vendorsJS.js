@@ -2,8 +2,7 @@ const gulp = require('gulp');
 const concat = require('gulp-concat');
 
 const vendorsScripts = [
-  // 'dev/js/renderers/*.js',
-  // 'dev/js/lang/*.js'
+  // 'dev/js/*.js',
 ];
 
 module.exports = function vendors(cb) {

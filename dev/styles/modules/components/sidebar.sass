@@ -4,6 +4,8 @@
     background-color: #f9fbfc
     padding: 21px 30px
     height: fit-content
+    .close
+        display: none
 
 .filter
     &-title 
@@ -81,7 +83,7 @@
         background: url("../img/icons/arr-more-down.png") no-repeat right center / contain
         +box(9px) 
 
-    &.close:before 
+    &.active:before 
         transform: translateY(-50%) scaleY(-1)
         
 

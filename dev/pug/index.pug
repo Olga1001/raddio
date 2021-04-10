@@ -4,13 +4,14 @@ block variables
 	-var title = 'catalog 2'
 
 block link
-	link(rel="stylesheet" type='text/css' href="css/mediaelementplayer.min.css")
+	link(rel="stylesheet" type='text/css' href="css/libs.css")
 
 block content
 	main.catalog
 		.container 
 			.flex-wrap
-				.sidebar
+				.sidebar(data-item="sidebar")
+					button.close(type="button" data-close)
 					.filter
 						p.filter-title ganres
 						form.search.search-filter 
@@ -113,31 +114,33 @@ block content
 							each val, index in ['new','most liked','listening now']
 								li 
 									a(href="#" class=index==0 ? 'active': '')=val
-						button.btn-filter(type="button") 
+						button.btn-filter(type="button" data-open="sidebar") 
 
 					ul.playlists 
 						-var n = 8
 						while n--
 							li.playlist 
-								a(href="#") 
-									img(src="img/common/sloy_78_1207.jpg" alt="img")
-								.playlist-content 
-									div
-										a.name(href="#") GotRadio - Classic Hits
-										.flex-wrap
+								.d-flex
+									a(href="#") 
+										img(src="img/common/sloy_78_1207.jpg" alt="img")
+									.playlist-content 
+										div
+											a.name(href="#") GotRadio - Classic Hits
+											.flex-wrap
 
-											.align-items-center.tags
-												a.tag(href="#") Chillout, 
-												a.tag(href="#") Relax
-											a.country(href="#") United Kingdom, London 
-											p.fm 104.2 FM
-									.flex-wrap.playlist-info
-										.views 1 980
-										.likes 8 900
-										button.btn-like(type="button")
-											span.align-items-center like
-											| 298
-								button.btn-play(type="button" data-href="http://www.largesound.com/ashborytour/sound/AshboryBYU.mp3")
+												.align-items-center.tags
+													a.tag(href="#") Chillout, 
+													a.tag(href="#") Relax
+												a.country(href="#") United Kingdom, London 
+												p.fm 104.2 FM
+										.flex-wrap.playlist-info
+											.views 1 980
+											.likes 8 900
+											button.btn-like(type="button")
+												span.align-items-center like
+												| 298
+								audio(preload='none' controls='' aria-label="1")
+									source(src='http://www.largesound.com/ashborytour/sound/AshboryBYU.mp3' type='audio/mp3')
 						li.playlist 
 							a(href="#") 
 								img(src="img/common/sloy_78_1207.jpg" alt="img")
@@ -157,8 +160,10 @@ block content
 									button.btn-like(type="button")
 										span.align-items-center like
 										| 298
-							button.btn-play(type="button" data-href="phonk_mix_2021_night_drive_playlist_3_-5134525337228790328.mp3")
-
+							//- button.btn-play(type="button" data-href="phonk_mix_2021_night_drive_playlist_3_-5134525337228790328.mp3")
+							
+							audio(preload='none' controls='' aria-label="1")
+								source(src='http://www.largesound.com/ashborytour/sound/AshboryBYU.mp3' type='audio/mp3')
 					+pagination(adjacents, 280, 10, currentPage, base, arrow)
 
 	include modules/footer/footer
@@ -174,7 +179,7 @@ block content
 				.players-action
 					button.prev.arrow-player(type="button")
 
-					audio#audio(preload='none' controls='' aria-label="1")
+					audio(preload='none' controls='' aria-label="1")
 						source(src='http://www.largesound.com/ashborytour/sound/AshboryBYU.mp3' type='audio/mp3')
 
 					button.next.arrow-player(type="button")

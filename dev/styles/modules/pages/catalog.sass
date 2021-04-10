@@ -1,6 +1,6 @@
 
 .catalog
-    padding: 23px 0
+    padding: 23px 0 40px
 
 .content
     width: calc(100% - 270px)
@@ -39,11 +39,37 @@
 
 .playlist 
     display: flex 
+    align-items: center
     width: 100% 
     background-color: $bg-white
     border: 1px solid #eaeef4
     margin-bottom: 10px
     position: relative
+    &:hover 
+        .mejs__container
+            opacity: 1
+    .mejs__container
+        margin-left: auto
+        opacity: 0
+        transition: all 0.3s ease
+    .mejs__controls
+        position: static
+        padding-right: 35px!important
+    .mejs__horizontal-volume-slider, .mejs__button.mejs__volume-button, .mejs__time-rail 
+        display: none
+    .mejs__button button
+        background-color: transparent
+        +box(50px,56px)
+        border-radius: 0
+    .mejs__button.mejs__play > button:before
+        border-color: transparent transparent transparent #ffd800
+        border-width: 28px 0 28px 38px
+    .mejs__button.mejs__pause > button:before
+        +box(42px)
+        background-color: #ffd800
+    .mejs__button.mejs__replay > button:before
+        +box(50px)
+        background-image: url("../img/icons/refresh2.svg") / contain
     a 
         flex-shrink: 0
     img 
@@ -53,10 +79,11 @@
         background: #f2f6f9 url("../img/common/default.png") no-repeat center / contain
         
     &-content 
-        padding: 19px 25px 13px
+        padding: 19px 0 13px 25px
         display: flex 
         flex-direction: column
         justify-content: space-between
+        width: 100%
     &-info 
         align-items: center
 

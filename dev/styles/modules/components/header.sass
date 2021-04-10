@@ -15,7 +15,6 @@
         margin: 0 16px
 
     a 
-        font-family: PTSans
         font-size: 16px
         line-height: 10px
         font-weight: 700
@@ -25,6 +24,8 @@
         color: $white
         position: relative 
         white-space: nowrap
+        display: flex 
+        align-items: center
         &:before 
             +before
 
@@ -100,7 +101,7 @@
             bottom: 13px
     &.active 
         position: fixed
-        top: 20px 
+        top: 13px 
         right: 15px
         .burger-line-top
             top: 50% 

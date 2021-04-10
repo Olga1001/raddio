@@ -1,3 +1,10 @@
 footer.footer
     .container 
-    
+        .flex-wrap.align-items-center
+            a.logo(href="#")
+                img(src="img/logo/logo2.png", alt="logo") 
+            nav.navfooter
+                ul 
+                    each val in ['Station','Contacts','Ganres','Countries','Reclame','Sitemap','Top station']
+                        li 
+                            a(href="#")=val
