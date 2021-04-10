@@ -1,0 +1,31 @@
+#up
+    position: fixed 
+    right: 15px 
+    bottom: 85px 
+    background-color: #ffc000
+    border-radius: 20px
+    +box(49px,34px)
+    &:before 
+        +before 
+        left: 50%
+        +box(18px,15px)
+        background-image: url("../img/icons/right-arrow.svg")
+        transform: translate(-50%,-50%) rotate(-90deg)
+
+.btn-more2
+    background-color: #f2f6f9
+    line-height: 28px
+    font-size: 13px
+    text-transform: uppercase
+    letter-spacing: -0.005em
+    color: #b5c1ca
+    padding: 0 35px 0 11px
+    position: relative 
+    width: fit-content
+    &:before 
+        +before 
+        left: auto 
+        right: 10px 
+        background-image: url("../img/icons/arr-more-up.png")
+        +box(8px)
+        transform: translateY(-50%) rotate(90deg)

@@ -61,7 +61,7 @@ btnOpen.forEach(function (item) {
     });
 });
 
-
+// close pop-ups
 btnClose.forEach(function (item) {
     item.addEventListener('click', () => {
         modal.forEach(function (e) {
@@ -69,4 +69,18 @@ btnClose.forEach(function (item) {
         });
     });
 });
+
+//smooth scroll
+const scrollToTop = () => {
+    const c = document.documentElement.scrollTop || document.body.scrollTop;
+    if (c > 0) {
+      window.requestAnimationFrame(scrollToTop);
+      window.scrollTo(0, c - c / 8);
+    }
+};
+
+document.getElementById('up').addEventListener('click', () => {
+    scrollToTop();
+});
+
 

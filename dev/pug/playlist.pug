@@ -1,0 +1,127 @@
+extends layout/main
+
+block variables
+	-var title = 'catalog 2'
+
+block link
+	link(rel="stylesheet" type='text/css' href="css/libs.css")
+
+block content
+	main.playlist-main
+		.container 
+			nav
+				ul.breadcrumbs
+					+breadcrumbs-item("Raddio.net", "#")
+					+breadcrumbs-item("Top station", "#")
+					+breadcrumbs-item("Page name active")
+			.flex-wrap
+				.left 
+					h2.title2.fw-bold Playlist La Mega 97.9
+					.playlist-date.flex-wrap 
+						label.playlist-date_item 
+							input.checkbox(type="radio" name="radio")
+							span.check-circle
+							span.check-text Sat <br>21.11
+						label.playlist-date_item 
+							input.checkbox(type="radio" name="radio")
+							span.check-circle
+							span.check-text Sun <br>22.11
+						label.playlist-date_item 
+							input.checkbox(type="radio" name="radio" checked)
+							span.check-circle
+							span.check-text Mon <br>23.11
+						label.playlist-date_item 
+							input.checkbox(type="radio" name="radio")
+							span.check-circle
+							span.check-text Tue <br>24.11
+						label.playlist-date_item 
+							input.checkbox(type="radio" name="radio")
+							span.check-circle
+							span.check-text Wed <br>25.11
+						label.playlist-date_item 
+							input.checkbox(type="radio" name="radio")
+							span.check-circle
+							span.check-text Sat <br>26.11
+						label.playlist-date_item 
+							input.checkbox(type="radio" name="radio")
+							span.check-circle
+							span.check-text Sat <br>27.11
+						label.playlist-date_item 
+							input.checkbox(type="radio" name="radio")
+							span.check-circle
+							span.check-text Sat <br>28.11
+						label.playlist-date_item 
+							input.checkbox(type="radio" name="radio")
+							span.check-circle
+							span.check-text Sat <br>29.11
+
+					.plaed
+						h3.title3 RECENTLY PLAYED
+						ul.plaed-list 
+							li.flex-center-between 
+								.align-items-center
+									a(href="#") 
+										img(src="img/common/sloy_78_1207.jpg", alt="img")
+									div 
+										a.plaed-achtor(href="#") Kip Mazuy 
+										a.plaed-name(href="#") Picasso's Heaven
+								.align-items-center
+									a.youtube.active(href="#") 
+									.plaed-time.now now
+							- 
+								plaed = [
+									{
+										poster: 'sloy_78_1207.jpg',
+										achtor: 'Ann Sophie',
+										name: 'Black Smoke',
+									}
+								]
+							each val in plaed
+								-var n = 14
+								while n--
+									li.flex-center-between 
+										.align-items-center
+											a(href="#") 
+												img(src="img/common/"+val.poster, alt="img")
+											div 
+												a.plaed-achtor(href="#")=val.achtor 
+												a.plaed-name(href="#")=val.name
+										.align-items-center
+											a.youtube(href="#") 
+											.plaed-time 16:20
+
+				.right 
+					.banner BANNER
+			
+				
+
+	include modules/footer/footer
+	.players
+		.container
+			.media-wrapper
+				.players-item.players-side
+					img(src="img/common/sloy_78_1207.jpg", alt="img")
+					div 
+						a(href="#") GotRadio - Classic Hits
+						p What's Love Got To Do With It - Tina Turner
+
+				.players-action
+					button.prev.arrow-player(type="button")
+
+					audio(preload='none' controls='' aria-label="1")
+						source(src='http://www.largesound.com/ashborytour/sound/AshboryBYU.mp3' type='audio/mp3')
+
+					button.next.arrow-player(type="button")
+				.players-side
+					button.btn-favorites(type="button")
+
+
+block script
+	script(src="js/mediaelement-and-player.min.js")
+	script(src='js/audio.js')
+
+
+
+
+
+

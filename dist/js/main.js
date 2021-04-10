@@ -56,11 +56,25 @@ btnOpen.forEach(function (item) {
       }
     });
   });
-});
+}); // close pop-ups
+
 btnClose.forEach(function (item) {
   item.addEventListener('click', function () {
     modal.forEach(function (e) {
       e.classList.remove('active');
     });
   });
+}); //smooth scroll
+
+var scrollToTop = function scrollToTop() {
+  var c = document.documentElement.scrollTop || document.body.scrollTop;
+
+  if (c > 0) {
+    window.requestAnimationFrame(scrollToTop);
+    window.scrollTo(0, c - c / 8);
+  }
+};
+
+document.getElementById('up').addEventListener('click', function () {
+  scrollToTop();
 });

@@ -6,8 +6,6 @@
 @import "utils/base"
 
   
-h1, .title1 
-  
 h2, .title2
   position: relative
   width: fit-content
@@ -16,11 +14,35 @@ h2, .title2
   font-weight: 400
   text-transform: uppercase
   color: $dark
+  
+.title2
   &:before 
     +before
     background-image: url("../img/icons/category.png")
     left: calc(100% + 14px)
     +box(23px)
+
+h3, .title3
+  font-size: 24px
+  font-weight: 700
+  color: $dark
+
+h4, .title4
+  font-size: 22px
+  line-height: 30px
+  font-weight: 700
+  text-transform: uppercase
+  color: $dark
+
+.titleB 
+  font-size: 21px
+  line-height: 10px
+  font-weight: 700
+  text-transform: uppercase
+  color: $dark
+  border-top: 1px solid $yellow 
+  padding-top: 13px
+  width: fit-content
 
 .search
   position: relative
@@ -63,6 +85,11 @@ h2, .title2
 .text 
   color: #5c5f62
   margin-top: 13px 
+  &-small
+    font-size: 13px
+    line-height: 16px
+    letter-spacing: -0.005em
+    color: $black
 
 .close
   +box(30px)
@@ -82,8 +109,14 @@ h2, .title2
   &:after 
     transform: translate(-50%,-50%) rotate(-45deg)
 
+
 @import "modules/modules"
 
+.bg-yellow 
+  background-color: #ffd800
+  
+.b-red
+  border-color: #fd61a3
 // .overlay
 //   position: fixed
 //   z-index: 7 

@@ -7,164 +7,146 @@ block link
 	link(rel="stylesheet" type='text/css' href="css/libs.css")
 
 block content
-	main.catalog
+	main.station-main
 		.container 
+			nav
+				ul.breadcrumbs
+					+breadcrumbs-item("Raddio.net", "#")
+					+breadcrumbs-item("Top station", "#")
+					+breadcrumbs-item("Page name active")
 			.flex-wrap
-				.sidebar(data-item="sidebar")
-					button.close(type="button" data-close)
-					.filter
-						p.filter-title ganres
-						form.search.search-filter 
-							input(type="text")
-							button(type="sumbit")
-						ul.list 
-							each val, index in [{link: 'Rock', count: '92'},{link: 'RnB', count: '110'},{link: 'Alternative', count: '90'},{link: 'Country', count: '31'},{link: 'Pop', count: '1'},{link: 'Top 40', count: '4'},{link: 'Classic', count: '40'},{link: 'Jazz', count: '32'},{link: 'Soul', count: '92'}, {link: 'Dance', count: '22'}, {link: 'Arabic', count: '1'}, {link: 'Blues', count: '3'}, {link: 'Dance', count: '22'}, {link: 'Arabic', count: '1'}, {link: 'Blues', count: '3'}]
-								li(class=index > 11 ? 'd-none': 'isVisible')
-									.list-item
-										a(href="#")=val.link
-										p 
-											span.dash —
-											=val.count
-						button.btn-more(type="button") show more
-					.filter
-						p.filter-title COUNTRY
-
-						form.search.search-filter 
-							input(type="text")
-							button(type="sumbit")
-						ul.list 
-							each val, index in [{link: 'United States', count: '92'},{link: 'Danmark', count: '99'},{link: 'Deutschland', count: '988'},{link: 'France', count: '92'},{link: 'Belgie', count: '81'},{link: 'Espana', count: '932'},{link: 'Canada', count: '331'},{link: 'Australia', count: '22'},{link: 'Espana', count: '932'},{link: 'Canada', count: '331'},{link: 'Australia', count: '22'},{link: 'Espana', count: '932'},{link: 'Canada', count: '331'},{link: 'Australia', count: '22'}]
-								li(class=index > 8 ? 'd-none': 'isVisible')
-									.list-item
-										if (index == 3)
-											a(href="#")=val.link
-											.arr.arr-drop
-											p
-												span.dash.small —
-												=val.count
-										else
-											a(href="#")=val.link
-											p
-												span.dash —
-												=val.count
-									if (index == 3)
-										ul.drop-list.lv-1 
-											each val, index in [{link: 'Danmark', count: '2'},{link: 'Deutschland', count: '1'},{link: 'Ibiza', count: '22'}]
-												li 
-													.list-item
-														if (index == 2)
-															a(href="#")=val.link
-															.arr.arr-drop
-															p
-																span.dash.small —
-																=val.count
-														else
-															a(href="#")=val.link
-															p
-																span.dash —
-																=val.count
-													if (index == 2)
-														ul.drop-list.lv-2 
-															each val, index in [{link: 'Elebento', count: '23'},{link: 'Sevya', count: '1'}]
-																li 
-																	.list-item
-																		.dash —
-																		a(href="#")
-																			=val.link
-																		p
-																			span.dash.small —
-																			=val.count
-						button.btn-more(type="button") show more
-					.filter
-						p.filter-title Languages
-
-						form.search.search-filter 
-							input(type="text")
-							button(type="sumbit")
-						ul.list 
-							each val, index in [{link: 'Algeria', count: '32'},{link: 'Argentina', count: '92'},{link: 'Bangladesh', count: '33'},{link: 'Bolivia', count: '778'},{link: 'Bosnia and Herzegovina', count: '1'},{link: 'Brasil', count: '2'},{link: 'Bulgaria', count: '32'}]
-								li(class=index > 7 ? 'd-none': 'isVisible')
-									.list-item
-										if (index == 3)
-											a(href="#")=val.link
-											.arr.arr-drop
-											p
-												span.dash.small —
-												=val.count
-										else
-											a(href="#")=val.link
-											p
-												span.dash —
-												=val.count
-						button.btn-more(type="button") show more
-				.content
-					nav
-						ul.breadcrumbs
-							+breadcrumbs-item("Raddio.net", "#")
-							+breadcrumbs-item("Top station", "#")
-							+breadcrumbs-item("Page name active")
-					h2.title Alternative
-					form.search
-						input(type="text" placeholder="Find a station by name or city ....")
-						button(type="sumbit")
-							span Search
-					p.text Alternative rock also called alternative music, alt-rock or simply alternative is a genre of rock music that emerged from the independent music underground of the 1980s and became widely popular in the 1990s and 2000s. In this instance, the word "alternative" refers to the genre's distinction from mainstream rock music.
-					.flex-sm-center-between
-						ul.sort 
-							each val, index in ['new','most liked','listening now']
-								li 
-									a(href="#" class=index==0 ? 'active': '')=val
-						button.btn-filter(type="button" data-open="sidebar") 
-
-					ul.playlists 
-						-var n = 8
-						while n--
-							li.playlist 
-								.d-flex
-									a(href="#") 
-										img(src="img/common/sloy_78_1207.jpg" alt="img")
-									.playlist-content 
-										div
-											a.name(href="#") GotRadio - Classic Hits
-											.flex-wrap
-
-												.align-items-center.tags
-													a.tag(href="#") Chillout, 
-													a.tag(href="#") Relax
-												a.country(href="#") United Kingdom, London 
-												p.fm 104.2 FM
-										.flex-wrap.playlist-info
-											.views 1 980
-											.likes 8 900
-											button.btn-like(type="button")
-												span.align-items-center like
-												| 298
+				.left 
+					.radio-block 
+						.radio-white.d-flex 
+							div 
+								img(src="img/common/sloy_78_1207.jpg", alt="img")
+								.radio-rating
+									.radio-rating_count 320
+									p Rating
+							.radio-info 
+								.align-items-center
+									a.country(href="#") United Kingdom, London 
+									p.fm 104.2 FM
+								h2.radio-title Smooth Jazz Mix New York
+								.align-items-center
+									a.tag(href="#") Chillout, 
+									a.tag(href="#") Relax
+								.flex-wrap.align-items-center.pb-15
+									p.text-small.mt-10 Link
+									a.link.icon-url.mt-10(href="#") floesdesign
+									a.link.icon-lang.mt-10(href="#") English
+									a.link.icon-facebook.mt-10(href="#") Facebok
+									a.link.icon-twitter.mt-10(href="#") Twitter
+								.align-items-center.mt-5 
+									p.text-small.mr-10 Adress
+									p.text-small.c-gray-400 From the Black Eyed Peas to Usher
+								.align-items-center.mt-5 
+									p.text-small.mr-10 Email
+									p.text-small.c-gray-400 info@gmail.com
+								.align-items-center.mt-5
+									p.text-small.mr-10 Telephone
+									p.text-small.c-gray-400 +3789 9870 000
+								
+						.radio-right
+							div
 								audio(preload='none' controls='' aria-label="1")
 									source(src='http://www.largesound.com/ashborytour/sound/AshboryBYU.mp3' type='audio/mp3')
-						li.playlist 
-							a(href="#") 
-								img(src="img/common/sloy_78_1207.jpg" alt="img")
-							.playlist-content 
-								div
-									a.name(href="#") GotRadio - Classic Hits
-									.flex-wrap
+								.flex-center-center
+									.rate-area
+										input#5-star(type='radio' name='rating' value='5')
+										label(for='5-star' title='Amazing') 
+										input#4-star(type='radio' name='rating' value='4')
+										label(for='4-star' title='Good') 
+										input#3-star(type='radio' name='rating' value='3')
+										label(for='3-star' title='Average')
+										input#2-star(type='radio' name='rating' value='2')
+										label(for='2-star' title='Not Good') 
+										input#1-star(type='radio' name='rating' value='1')
+										label(for='1-star' title='Bad')
 
-										.align-items-center.tags
-											a.tag(href="#") Chillout, 
-											a.tag(href="#") Relax
-										a.country(href="#") United Kingdom, London 
-										p.fm 104.2 FM
-								.flex-wrap.playlist-info
-									.views 1 980
-									.likes 8 900
-									button.btn-like(type="button")
-										span.align-items-center like
-										| 298
-							//- button.btn-play(type="button" data-href="phonk_mix_2021_night_drive_playlist_3_-5134525337228790328.mp3")
-							
-							audio(preload='none' controls='' aria-label="1")
-								source(src='http://www.largesound.com/ashborytour/sound/AshboryBYU.mp3' type='audio/mp3')
-					+pagination(adjacents, 280, 10, currentPage, base, arrow)
+									p.rating-text Vote 991 users
+								.flex-center-center 
+									.weight.bg-yellow 64kbps
+									.weight 128kbps
+							div
+								hr 
+									
+								button.btn-like.mx-auto(type="button")
+									span.align-items-center like
+									| 298
+					p.c-dark.p-20 From the Black Eyed Peas to Usher, the Hitz Channel plays Todays Best Music, not just some of it. You'll also get a taste of the old skool mixed in for flava. The hottest music from today's hottest stars can be found right here on .977 The Hits Channel.
+					
+					.tracks 
+						- 
+							plaed = [
+								{
+									poster: 'sloy_78_1207.jpg',
+									achtor: 'Ann Sophie',
+									name: 'Black Smoke',
+								}
+							]
+						.w-lg-50
+							p.titleB Last tracks played
+							ul.plaed-list
+								each val in plaed
+									li.flex-center-between 
+										.align-items-center
+											a(href="#") 
+												img(src="img/common/"+val.poster, alt="img")
+											div 
+												a.plaed-achtor(href="#")=val.achtor 
+												a.plaed-name(href="#")=val.name
+										.align-items-center
+											a.youtube(href="#") 
+											.plaed-time.now now
+									-var n = 4
+									while n--
+										li.flex-center-between 
+											.align-items-center
+												a(href="#") 
+													img(src="img/common/"+val.poster, alt="img")
+												div 
+													a.plaed-achtor(href="#")=val.achtor 
+													a.plaed-name(href="#")=val.name
+											.align-items-center
+												a.youtube(href="#") 
+												.plaed-time 16:20
+							a.btn-more2(href="#") show more
+						.w-lg-50.pl-lg-20  
+							p.titleB.b-red top tracks
+							ul.plaed-list.list-counter
+								each val in plaed
+									-var n = 5
+									while n--
+										li.flex-center-between 
+											.align-items-center
+												.number
+												a(href="#") 
+													img(src="img/common/"+val.poster, alt="img")
+												div 
+													a.plaed-achtor(href="#")=val.achtor 
+													a.plaed-name(href="#")=val.name
+											.align-items-center
+												a.youtube.active(href="#") 
+							a.btn-more2(href="#") show more
+					
+					section.radio-stations 
+						h4.title4 similar radio stations
+						.flex-wrap
+							-var n = 5
+							while n-- 
+								.radio-card
+									a(href="#") 
+										img(src="img/common/", alt="alt")
+									.radio-card_bottom
+										a.country(href="#") United Kingdom
+										a.radio-name(href="#") OASIS UNIVERSAL RASDIO
+						a.btn-more2.mx-auto(href="#") show more
+
+				.right 
+					.banner BANNER
+			
+				
 
 	include modules/footer/footer
 	.players
