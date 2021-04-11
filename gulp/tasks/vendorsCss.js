@@ -2,7 +2,6 @@ const gulp = require('gulp');
 const concat = require('gulp-concat');
 
 const vendorsStyles = [
-    'dev/styles/main.sass',
     'dev/vendor/mediaelementplayer.min.css',
 ];
 

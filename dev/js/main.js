@@ -6,7 +6,6 @@ var parentList = document.querySelectorAll('.list'),
     modal = document.querySelectorAll('[data-item]'),
     burger = document.querySelector('.burger');
 
-
 function hideList () {
     parentList.forEach(function (item) {
         var child = item.children;
@@ -79,8 +78,7 @@ const scrollToTop = () => {
     }
 };
 
+
 document.getElementById('up').addEventListener('click', () => {
     scrollToTop();
 });
-
-

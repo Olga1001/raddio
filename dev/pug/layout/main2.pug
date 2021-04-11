@@ -12,15 +12,14 @@ html(lang="en")
 		meta(name="viewport" content="width=device-width,initial-scale=1,height=device-height")
 		meta(name="keywords" content="")
 		meta(name="format-detection" content="telephone=no")
+		block link
 		link(rel="stylesheet" type='text/css' href="css/main.css")
 	body
 		.wrapper
 
-			include ../modules/header/header
-
 			block content
-			
+
 			include ../modules/footer/footer
 
-		script(src="js/main.js")
 		block script
+		script(src="js/main.js")
