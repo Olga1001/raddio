@@ -1,7 +1,7 @@
 extends layout/main
 
 block variables
-	-var title = 'catalog 2'
+	-var title = 'station'
 
 block link
 	link(rel="stylesheet" type='text/css' href="css/libs.css")
@@ -18,7 +18,7 @@ block content
 				.left 
 					.radio-block 
 						.radio-white.d-flex 
-							div 
+							.radio-white_left 
 								img(src="img/common/sloy_78_1207.jpg", alt="img")
 								.radio-rating
 									.radio-rating_count 320
@@ -76,7 +76,7 @@ block content
 									| 298
 					p.c-dark.p-20 From the Black Eyed Peas to Usher, the Hitz Channel plays Todays Best Music, not just some of it. You'll also get a taste of the old skool mixed in for flava. The hottest music from today's hottest stars can be found right here on .977 The Hits Channel.
 					
-					.tracks 
+					.tracks.flex-wrap 
 						- 
 							plaed = [
 								{
@@ -85,7 +85,7 @@ block content
 									name: 'Black Smoke',
 								}
 							]
-						.w-lg-50
+						.w-md-50.w-100
 							p.titleB Last tracks played
 							ul.plaed-list
 								each val in plaed
@@ -111,8 +111,8 @@ block content
 											.align-items-center
 												a.youtube(href="#") 
 												.plaed-time 16:20
-							a.btn-more2(href="#") show more
-						.w-lg-50.pl-lg-20  
+							a.btn-more_tracks(href="#") show more
+						.w-md-50.pl-md-20.w-100  
 							p.titleB.b-red top tracks
 							ul.plaed-list.list-counter
 								each val in plaed
@@ -128,24 +128,110 @@ block content
 													a.plaed-name(href="#")=val.name
 											.align-items-center
 												a.youtube.active(href="#") 
-							a.btn-more2(href="#") show more
+							a.btn-more_tracks(href="#") show more
 					
 					section.radio-stations 
 						h4.title4 similar radio stations
-						.flex-wrap
+						.list.flex-wrap
 							-var n = 5
 							while n-- 
-								.radio-card
+								.radio-card.isVisible
 									a(href="#") 
 										img(src="img/common/", alt="alt")
 									.radio-card_bottom
 										a.country(href="#") United Kingdom
 										a.radio-name(href="#") OASIS UNIVERSAL RASDIO
-						a.btn-more2.mx-auto(href="#") show more
+							-var n = 5
+							while n-- 
+								.radio-card.d-none
+									a(href="#") 
+										img(src="img/common/", alt="alt")
+									.radio-card_bottom
+										a.country(href="#") United Kingdom
+										a.radio-name(href="#") OASIS UNIVERSAL RASDIO
+						button.btn-more._2.mx-auto(type="button") show more
+					section.comments-stations 
+						.align-items-center 
+							h4.title4.icon-comments.mr-30 COMMENTS
+							a.add-comment(href="#") Add comment
+						form.align-items-center.pl-40.mt-24
+							.rate-area.big
+								input#5-star(type='radio' name='ratingadd' value='5')
+								label(for='5-star' title='Amazing') 
+								input#4-star(type='radio' name='ratingadd' value='4')
+								label(for='4-star' title='Good') 
+								input#3-star(type='radio' name='ratingadd' value='3')
+								label(for='3-star' title='Average')
+								input#2-star(type='radio' name='ratingadd' value='2')
+								label(for='2-star' title='Not Good') 
+								input#1-star(type='radio' name='ratingadd' value='1')
+								label(for='1-star' title='Bad')
+
+							p.rating-text Set your rating
+						.form-comments
+							textarea(name="", cols="20", rows="5") Comments ...
+							button.btn.ml-auto(type="submit") Send
+						
+						ul.comments-list.list 
+							each val in ['1','2','3'] 
+								li.isVisible 
+									.d-flex
+										img.comments_avatar(src="img/common/profile-user.svg", alt="avatar")
+										div 
+											.align-items-center
+												.rate-area
+													input#5-star(type='radio' name='rating-'+val value='5' checked)
+													label(for='5-star' title='Amazing') 
+													input#4-star(type='radio' name='rating-'+val  value='4' checked)
+													label(for='4-star' title='Good') 
+													input#3-star(type='radio' name='rating-'+val  value='3' checked)
+													label(for='3-star' title='Average')
+													input#2-star(type='radio' name='rating-'+val  value='2')
+													label(for='2-star' title='Not Good') 
+													input#1-star(type='radio' name='rating-'+val  value='1')
+													label(for='1-star' title='Bad')
+												p.comments_user eleonora
+												p.comments_date 12.02.2020 
+											p From the Black Eyed Peas to Usher, the Hitz Channel plays Todays Best Music, not just some of it. You'll also get a taste of the old skool mixed in for flava. The hottest music from today's hottest stars
+								
+							li.d-none 
+								.d-flex
+									img.comments_avatar(src="img/common/profile-user.svg", alt="avatar")
+									div 
+										.align-items-center
+											.rate-area
+												input#5-star(type='radio' name='rating' value='5' checked)
+												label(for='5-star' title='Amazing') 
+												input#4-star(type='radio' name='rating' value='4' checked)
+												label(for='4-star' title='Good') 
+												input#3-star(type='radio' name='rating' value='3' checked)
+												label(for='3-star' title='Average')
+												input#2-star(type='radio' name='rating' value='2')
+												label(for='2-star' title='Not Good') 
+												input#1-star(type='radio' name='rating' value='1')
+												label(for='1-star' title='Bad')
+											p.comments_user eleonora
+											p.comments_date 12.02.2020 
+										p From the Black Eyed Peas to Usher, the Hitz Channel plays Todays Best Music, not just some of it. You'll also get a taste of the old skool mixed in for flava. The hottest music from today's hottest stars
+						
+						button.btn-more._2.mx-auto(type="button") show more
+
 
 				.right 
-					.banner BANNER
-			
+					a.banner(href="#") BANNER
+					.radio-stations
+						p.titleB Radio stations
+						ul.plaed-list
+							each val in plaed
+								-var i = 5
+								while i--
+									li.align-items-center
+										a(href="#")
+											img(src="img/common/"+val.poster, alt="img")
+										div 
+											a.plaed-achtor(href="#")=val.achtor 
+											a.plaed-name(href="#")=val.name
+				
 				
 
 	include modules/footer/footer
@@ -157,7 +243,6 @@ block content
 					div 
 						a(href="#") GotRadio - Classic Hits
 						p What's Love Got To Do With It - Tina Turner
-
 				.players-action
 					button.prev.arrow-player(type="button")
 

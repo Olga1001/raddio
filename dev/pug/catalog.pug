@@ -17,7 +17,7 @@ block content
 						form.search.search-filter 
 							input(type="text")
 							button(type="sumbit")
-						ul.list 
+						ul.list.list-sidebar 
 							each val, index in [{link: 'Rock', count: '92'},{link: 'RnB', count: '110'},{link: 'Alternative', count: '90'},{link: 'Country', count: '31'},{link: 'Pop', count: '1'},{link: 'Top 40', count: '4'},{link: 'Classic', count: '40'},{link: 'Jazz', count: '32'},{link: 'Soul', count: '92'}, {link: 'Dance', count: '22'}, {link: 'Arabic', count: '1'}, {link: 'Blues', count: '3'}, {link: 'Dance', count: '22'}, {link: 'Arabic', count: '1'}, {link: 'Blues', count: '3'}]
 								li(class=index > 11 ? 'd-none': 'isVisible')
 									.list-item
@@ -82,7 +82,7 @@ block content
 							input(type="text")
 							button(type="sumbit")
 						ul.list 
-							each val, index in [{link: 'Algeria', count: '32'},{link: 'Argentina', count: '92'},{link: 'Bangladesh', count: '33'},{link: 'Bolivia', count: '778'},{link: 'Bosnia and Herzegovina', count: '1'},{link: 'Brasil', count: '2'},{link: 'Bulgaria', count: '32'}]
+							each val, index in [{link: 'Algeria', count: '32'},{link: 'Argentina', count: '92'},{link: 'Bangladesh', count: '33'},{link: 'Bolivia', count: '778'},{link: 'Bosnia and Herzegovina', count: '1'},{link: 'Brasil', count: '2'},{link: 'Bulgaria', count: '32'},{link: 'Bulgaria', count: '32'},{link: 'Bulgaria', count: '32'}]
 								li(class=index > 7 ? 'd-none': 'isVisible')
 									.list-item
 										if (index == 3)

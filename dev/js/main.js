@@ -9,11 +9,8 @@ var parentList = document.querySelectorAll('.list'),
 function hideList () {
     parentList.forEach(function (item) {
         var child = item.children;
-        
-        // var listVisibleLength = child.classList.contains('isVisible');
-        // console.log(listVisibleLength.length);
-
-        for (var i = 12; i < child.length; i++) {
+        var listVisibleLength = item.getElementsByClassName('isVisible').length;
+        for (var i = listVisibleLength; i < child.length; i++) {
             child[i].classList.add('d-none');
         }
     });
@@ -24,11 +21,13 @@ hideList();
 // function showList () {}
 btnMore.forEach(function (item) {
     item.addEventListener('click', () => {
-        var siblings = item.previousElementSibling;
-        var child = siblings.children;
+        var siblings = item.previousElementSibling,
+            child = siblings.children,
+            listVisibleLength = siblings.getElementsByClassName('isVisible').length;
+            
         item.classList.toggle('active');
 
-        for (var i = 12; i < child.length; i++) {
+        for (var i = listVisibleLength; i < child.length; i++) {
             child[i].classList.toggle('d-none') ;
             if (item.classList.contains('active')) {
                 item.innerHTML = 'close';

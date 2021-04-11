@@ -12,20 +12,76 @@
         background-image: url("../img/icons/right-arrow.svg")
         transform: translate(-50%,-50%) rotate(-90deg)
 
-.btn-more2
-    background-color: #f2f6f9
-    line-height: 28px
+.btn-more_tracks
     font-size: 13px
     text-transform: uppercase
+    position: relative
+    width: fit-content
+    display: block
+    background-color: #f2f6f9
+    line-height: 28px
     letter-spacing: -0.005em
     color: #b5c1ca
     padding: 0 35px 0 11px
-    position: relative 
-    width: fit-content
+    margin-bottom: 25px
     &:before 
-        +before 
+        +before
+        left: calc(100% + 7px)
+        background: url("../img/icons/arr-more-down.png") no-repeat right center / contain
+        +box(9px) 
         left: auto 
-        right: 10px 
-        background-image: url("../img/icons/arr-more-up.png")
-        +box(8px)
-        transform: translateY(-50%) rotate(90deg)
+        right: 12px
+        transform: translateY(-50%) rotate(-90deg)
+
+
+.btn-more
+    font-size: 13px
+    line-height: 10px
+    font-weight: 700
+    text-transform: uppercase
+    color: $gray-300
+    border-bottom: 1px solid $gray-300
+    position: relative
+    margin-left: 10px
+    margin-top: 15px
+    margin-bottom: 39px
+    width: fit-content
+    display: block
+    &:before 
+        +before
+        left: calc(100% + 7px)
+        background: url("../img/icons/arr-more-down.png") no-repeat right center / contain
+        +box(9px) 
+
+    &.active:before 
+        transform: translateY(-50%) scaleY(-1)
+    &._2
+        border: none
+        background-color: #f2f6f9
+        line-height: 28px
+        letter-spacing: -0.005em
+        color: #b5c1ca
+        padding: 0 35px 0 11px
+        &:before 
+            left: auto 
+            right: 12px
+
+.add-comment
+    font-size: 13px
+    line-height: 28px
+    text-transform: uppercase
+    letter-spacing: -0.005em
+    color: #b5c1ca
+    background-color: #f2f6f9
+    padding: 0 15px
+
+.btn
+    background-color: #ffd800
+    border-radius: 17.5px
+    line-height: 37px
+    font-size: 14px
+    font-weight: 700
+    letter-spacing: -0.005em
+    color: $black
+    padding: 0 35px
+    display: block

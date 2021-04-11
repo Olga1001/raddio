@@ -12,10 +12,6 @@
 @media only screen and (min-width : 992px)
     .players-side:last-child
         justify-content: flex-end
-    .w-lg-50
-        width: 50%
-    .pl-lg-20 
-        padding-left: 20px
     // .d-lg-block
     //     display: block
     // .d-lg-flex 
@@ -23,7 +19,35 @@
 @media only screen and (min-width : 768px)
     .d-md-block
         display: block
+    .w-md-50
+        width: 50%
+    .pl-md-20 
+        padding-left: 20px
 
+@media (min-width : 992px) and (max-width : 1199px)
+    .radio-card img
+        height: 12.58vw
+    .radio-card
+        width: calc(20% - 1.73vw)
+        margin-right: 2.16vw
+    .radio-card_bottom
+        padding: 1.083vw 1.66vw 2.083vw
+    .station-main .left 
+        padding-right: 15px
+    
+@media only screen and (max-width : 1199px)
+    .radio-block
+        padding: 5px
+    .radio-white
+        padding: 5px
+        width: calc(100% - 220px)
+    .radio-info
+        padding: 5px 10px
+    .radio-right
+        width: 220px
+        padding: 5px 5px 8px 5px
+    .radio-right .mejs__container 
+        +box(65px!important)
 @media only screen and (max-width : 991px)
     .burger
         display: block
@@ -85,6 +109,12 @@
         width: 200px
     .plaed
         padding: 35px 30px
+    .station-main
+        .left 
+            width: 100% 
+            padding-right: 0
+        .right 
+            width: 100%
 @media only screen and (max-width : 767px)
     .btn-filter
         display: block
