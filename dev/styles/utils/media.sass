@@ -8,6 +8,10 @@
 @media only screen and (min-width : 576px)
     .flex-sm-center-between
         +d-flex(space-between, center)
+    .d-sm-none
+        display: none 
+    .d-sm-block 
+        display: block
 
 @media only screen and (min-width : 992px)
     .players-side:last-child
@@ -46,8 +50,12 @@
     .radio-right
         width: 220px
         padding: 5px 5px 8px 5px
-    .radio-right .mejs__container 
+    .radio-right .mejs__container,  .radio-right .mejs__button button 
         +box(65px!important)
+    .mejs__button.mejs__play > button:before
+        transform: translate(-50%, -50%) scale(0.6)
+    .radio-right
+        justify-content: space-around
 @media only screen and (max-width : 991px)
     .burger
         display: block
@@ -115,6 +123,23 @@
             padding-right: 0
         .right 
             width: 100%
+    .radio-card img
+        height: 171px
+    .radio-card
+        width: 171px 
+        flex-shrink: 0
+    .slider-x_lg
+        width: calc(100% + 30px)
+        overflow-x: auto 
+        flex-wrap: nowrap
+        margin: 0 -15px
+        padding: 0 15px 25px
+    .radio-stations .btn-more
+        display: none
+    .radio-card
+        display: block!important
+
+
 @media only screen and (max-width : 767px)
     .btn-filter
         display: block
@@ -163,6 +188,20 @@
         padding-right: 0
     .right 
         width: 100%
+    .radio-card
+        margin-right: 15px
+    .tracks .plaed-list
+        max-width: 100%
+    .radio-block
+        display: block
+    .radio-white, .radio-right
+        width: 100%
+    .radio-right .mejs__button.mejs__play > button:before
+        margin-left: 3px
+    .players .mejs__button.mejs__play > button:before
+        margin-left: 0
+    .right .radio-stations
+        padding: 20px 15px
 @media only screen and (max-width : 575px)
     .page
         &:nth-child(4), &:nth-child(5), &:nth-child(6), &:nth-child(7), &:nth-child(8)
@@ -215,6 +254,15 @@
         font-size: 30px
     h3, .title3
         font-size: 20px
+    .radio-white img
+        +box(102px)
+    .radio-title
+        font-size: 21px
+    .comments_user
+        padding-right: 0
+        margin: 0 15px 10px
+
+
 @media only screen and (max-width : 374px)
     .name
         font-size: 14px

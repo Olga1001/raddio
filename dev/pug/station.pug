@@ -17,26 +17,39 @@ block content
 			.flex-wrap
 				.left 
 					.radio-block 
-						.radio-white.d-flex 
-							.radio-white_left 
-								img(src="img/common/sloy_78_1207.jpg", alt="img")
-								.radio-rating
-									.radio-rating_count 320
-									p Rating
-							.radio-info 
-								.align-items-center
-									a.country(href="#") United Kingdom, London 
-									p.fm 104.2 FM
-								h2.radio-title Smooth Jazz Mix New York
-								.align-items-center
-									a.tag(href="#") Chillout, 
-									a.tag(href="#") Relax
-								.flex-wrap.align-items-center.pb-15
-									p.text-small.mt-10 Link
-									a.link.icon-url.mt-10(href="#") floesdesign
-									a.link.icon-lang.mt-10(href="#") English
-									a.link.icon-facebook.mt-10(href="#") Facebok
-									a.link.icon-twitter.mt-10(href="#") Twitter
+						.radio-white 
+							.d-flex 
+								.radio-white_left 
+									img(src="img/common/sloy_78_1207.jpg", alt="img")
+									.radio-rating
+										.radio-rating_count 320
+										p Rating
+								.radio-info 
+									.align-items-center.flex-wrap
+										a.country(href="#") United Kingdom, London 
+										p.fm 104.2 FM
+									h2.radio-title Smooth Jazz Mix New York
+									.align-items-center
+										a.tag(href="#") Chillout, 
+										a.tag(href="#") Relax
+									.flex-wrap.align-items-center.pb-15
+										p.text-small.mt-10 Link
+										a.link.icon-url.mt-10(href="#") floesdesign
+										a.link.icon-lang.mt-10(href="#") English
+										a.link.icon-facebook.mt-10(href="#") Facebok
+										a.link.icon-twitter.mt-10(href="#") Twitter
+									.d-sm-block.d-none
+										.align-items-center.mt-5 
+											p.text-small.mr-10 Adress
+											p.text-small.c-gray-400 From the Black Eyed Peas to Usher
+										.align-items-center.mt-5 
+											p.text-small.mr-10 Email
+											p.text-small.c-gray-400 info@gmail.com
+										.align-items-center.mt-5
+											p.text-small.mr-10 Telephone
+											p.text-small.c-gray-400 +3789 9870 000
+							
+							.d-sm-none
 								.align-items-center.mt-5 
 									p.text-small.mr-10 Adress
 									p.text-small.c-gray-400 From the Black Eyed Peas to Usher
@@ -46,7 +59,6 @@ block content
 								.align-items-center.mt-5
 									p.text-small.mr-10 Telephone
 									p.text-small.c-gray-400 +3789 9870 000
-								
 						.radio-right
 							div
 								audio(preload='none' controls='' aria-label="1")
@@ -132,7 +144,7 @@ block content
 					
 					section.radio-stations 
 						h4.title4 similar radio stations
-						.list.flex-wrap
+						.list.flex-wrap.slider-x_lg
 							-var n = 5
 							while n-- 
 								.radio-card.isVisible
@@ -151,7 +163,7 @@ block content
 										a.radio-name(href="#") OASIS UNIVERSAL RASDIO
 						button.btn-more._2.mx-auto(type="button") show more
 					section.comments-stations 
-						.align-items-center 
+						.flex-wrap 
 							h4.title4.icon-comments.mr-30 COMMENTS
 							a.add-comment(href="#") Add comment
 						form.align-items-center.pl-40.mt-24
@@ -192,7 +204,7 @@ block content
 													label(for='1-star' title='Bad')
 												p.comments_user eleonora
 												p.comments_date 12.02.2020 
-											p From the Black Eyed Peas to Usher, the Hitz Channel plays Todays Best Music, not just some of it. You'll also get a taste of the old skool mixed in for flava. The hottest music from today's hottest stars
+											p.comments_text From the Black Eyed Peas to Usher, the Hitz Channel plays Todays Best Music, not just some of it. You'll also get a taste of the old skool mixed in for flava. The hottest music from today's hottest stars
 								
 							li.d-none 
 								.d-flex

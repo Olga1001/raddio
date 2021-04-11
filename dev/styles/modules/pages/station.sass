@@ -28,12 +28,12 @@
             object-fit: cover
         &_left
             flex-shrink: 0
-            background-color: #f4f7f8
             border-radius: 0 0 5px 5px
     &-rating
         border-radius: 5px
         padding: 11px
         +d-flex(center)
+        background-color: #f4f7f8
         &_count
             background-color: #c6d5e0
             border-radius: 12.5px
@@ -239,10 +239,6 @@
         li 
             border-bottom: 1px solid #e9eef1
             padding: 20px 0
-            p 
-                font-size: 15px
-                line-height: 22px
-                color: #181818
         .rate-area
             margin-bottom: 10px
     &_avatar 
@@ -252,6 +248,10 @@
         flex-shrink: 0
         margin-right: 10px
         object-fit: cover 
+    &_text 
+        font-size: 15px
+        line-height: 22px
+        color: #181818
     &_user 
         font-size: 16px
         line-height: 13px
