@@ -85,14 +85,31 @@
         transition: all 0.3s ease
         display: block
         padding-top: 65px
-        a 
+        &-link
             line-height: 45px 
             color: $black
             padding-left: 40px!important
-            border-bottom: 1px solid rgba($black,0.1)
             width: 100%
         .arr:before
             content: url("../img/icons/arr-more-down.png")
+    .menu-item
+        display: block     
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1)
+    .submenu  
+        position: static
+        padding: 0 
+    .submenu-container
+        box-shadow: none 
+        padding: 0 10px
+    .submenu-content
+        padding: 0 0 20px 0
+    .submenu-title 
+        display: none
+    .submenu-content ul
+        padding-top: 0
+    .menu-item:hover .menu-link:before
+        content: none
+
     .logo
         margin-right: auto
     .content 
@@ -266,6 +283,11 @@
         padding: 20px 10px
     .popup
         padding: 10px
+    .submenu-content li
+        width: 100% 
+        padding-right: 0
+    .submenu-2 li
+        margin-bottom: 10px
 @media only screen and (max-width : 374px)
     .name
         font-size: 14px

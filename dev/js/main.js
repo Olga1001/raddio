@@ -4,7 +4,8 @@ var parentList = document.querySelectorAll('.list'),
     btnClose = document.querySelectorAll('[data-close]'),
     btnOpen = document.querySelectorAll('[data-open]'),
     modal = document.querySelectorAll('[data-item]'),
-    burger = document.querySelector('.burger');
+    burger = document.querySelector('.burger'),
+    menuItem = document.querySelectorAll('.menu-item');
 
 function hideList () {
     parentList.forEach(function (item) {
@@ -73,6 +74,13 @@ btnClose.forEach(function (item) {
         });
     });
 });
+
+// menuItem.forEach(function (item) {
+//     item.addEventListener('mouseover', () => {
+//        var submenu = item.getElementsByClassName('submenu');
+//        submenu.classList.toggle("slide");
+//     });
+// });
 
 //smooth scroll
 const scrollToTop = () => {

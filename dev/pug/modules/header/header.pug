@@ -8,12 +8,75 @@ header.header
                 ul.menu.stopPropagation 
                     each val, index in [{icon: 'star', link: 'Top Station'},{icon: 'notes', link: 'Genres'},{icon: 'compass', link: 'Countries'},{icon: 'land', link: 'Languages'},]
                         li.menu-item(class=index==0 ? 'active': '')
-                            a(href="#" class="icon-"+val.icon)=val.link
-                                if (index == 2 || index == 3)
-                                    span.arr
-                            if (index == 2 || index == 3)
-                                ul.submenu
-                                    li
+                            .menu-link(href="#" class="icon-"+val.icon)=val.link
+                                span.arr
+                            if (index == 0)
+                                .submenu
+                                    .submenu-container
+                                        .submenu-content
+                                            p.submenu-title The most popular station 
+                                            ul.flex-wrap  
+                                                -var n = 8
+                                                while n--
+
+                                                    li 
+                                                        a.align-items-center(href="#") 
+                                                            object
+                                                                .submenu-img
+                                                                    img(src="img/common/figura_26_(kopiya)_8_659.jpg", alt="avatar")
+                                                            span 538 LUISTEREN
+                                        .submenu-bottom
+                                            a.btn-more(href="#") all station
+                            else if (index == 1)
+                                .submenu
+                                    .submenu-container
+                                        .submenu-content
+                                            p.submenu-title The most popular genres
+                                            ul.flex-wrap  
+                                                -var n = 8
+                                                while n--
+                                                    li 
+                                                        a.align-items-center(href="#") 
+                                                            object
+                                                                .submenu-img
+                                                                        img(src="img/common/figura_26_(kopiya)_8_659.jpg", alt="avatar")
+                                                            span Alternative
+                                                            .plays 100
+                                        .submenu-bottom
+                                            a.btn-more(href="#") all genres
+                            else if (index == 2)
+                                .submenu.submenu-2
+                                    .submenu-container
+                                        .submenu-content
+                                            p.submenu-title MOST POPULAR COUNTRIES
+                                            ul.flex-wrap  
+                                                -var n = 8
+                                                while n--
+                                                    li 
+                                                        a.align-items-center(href="#") 
+                                                            img(src="img/flags/figura_29_(kopiya)_4_1025.png", alt="avatar")
+                                                            span Nederland
+                                                            .plays 187
+                                        .submenu-bottom
+                                            a.btn-more(href="#") all countries
+                            else if (index == 3)
+                                .submenu.submenu-2
+                                    .submenu-container
+                                        .submenu-content
+                                            p.submenu-title language station
+                                            ul.flex-wrap  
+                                                -var n = 8
+                                                while n--
+                                                    li 
+                                                        a.align-items-center(href="#") 
+                                                            .lang-list
+                                                            span United States
+                                                            .plays 187
+                                        .submenu-bottom
+                                            a.btn-more(href="#") all language
+
+
+
                             
             .align-items-center
                 a.btn-favorites(href="#") 

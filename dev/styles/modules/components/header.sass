@@ -9,14 +9,41 @@
 .menu 
     display: flex 
     align-items: center 
+    position: relative
     &-item 
         display: flex 
         align-items: center
-        margin: 0 16px
+        padding: 0 16px
+        &:hover 
+            .menu-link:before 
+                content: ''
 
-    a 
+            .submenu 
+                // opacity: 1 
+                // pointer-events: auto
+                display: block
+            .submenu-container
+                height: 100%
+            .menu-link
+                color: #37373a
+                &.icon-star
+                    &:after 
+                        content: url("../img/icons/star-hov.png")
+                &.icon-notes
+                    &:after 
+                        content: url("../img/icons/notes-hov.png")
+                &.icon-compass
+                    &:after 
+                        content: url("../img/icons/compass-hov.png")
+                &.icon-land
+                    &:after 
+                        content: url("../img/icons/lang-hov.png")
+            .arr:before
+                content: url(../img/icons/arr-more-down.png)
+
+    &-link
         font-size: 16px
-        line-height: 10px
+        line-height: 1
         font-weight: 700
         text-transform: uppercase
         letter-spacing: -0.01em
@@ -26,31 +53,43 @@
         white-space: nowrap
         display: flex 
         align-items: center
-        &:hover 
-            color: #96d3f6
+        z-index: 8
+        cursor: pointer
         &:before 
+            position: absolute
+            top: -15px
+            left: -16px
+            width: calc(100% + 32px)
+            height: calc(16px + 45px)
+            transition: all 0.3s ease 
+            background-color: $bg-white
+            border-radius: 7px 7px 0 0
+            z-index: -1
+        // &:hover 
+        //     color: #96d3f6
+        &:after 
             content: ''
             +centerY
             left: 0
 
         &.icon-star
             padding-left: 34px
-            &:before 
+            &:after 
                 font-size: 24px
                 content: url("../img/icons/star.png")
         &.icon-notes
             padding-left: 33px
-            &:before 
+            &:after 
                 font-size: 23px
                 content: url("../img/icons/notes.png")
         &.icon-compass
             padding-left: 39px
-            &:before 
+            &:after 
                 font-size: 29px
                 content: url("../img/icons/compass.png")
         &.icon-land
             padding-left: 40px
-            &:before 
+            &:after 
                 font-size: 30px
                 content: url("../img/icons/lang.png")
         
@@ -69,10 +108,126 @@
         left: 0
         font-size: 10px
 
-
 .submenu 
-    display: none 
+    // opacity: 0 
+    // pointer-events: none
+    display: none
+    position: absolute
+    left: 0 
+    top: 100%
+    width: 100%
+    z-index: 7
+    padding-top: 17px
+    transition: all 0.3s ease
+    .btn-more
+        margin: 0
+        &:before 
+            transform: translateY(-50%) rotate(-90deg)
+    &-container
+        background-color: $bg-white
+        box-shadow: 0px 5px 27px 0px rgba(0,0,0,0.2)
+        border-radius: 7px
+        height: 0
+        transition: height 0.3s ease
 
+    &-title  
+        font-size: 16px
+        line-height: 10px
+        font-weight: 700
+        text-transform: uppercase
+        letter-spacing: -0.005em
+        color: #37373a
+    &-content 
+        padding: 25px
+        // max-width: 500px
+        ul 
+            padding-top: 20px
+        li 
+            width: 50%
+            margin: 2.5px 0
+            padding-right: 30px
+            max-width: 214px
+        a 
+            
+            &:hover 
+                span
+                    color: #ffba00
+                    border-bottom-color: transparent
+                .submenu-img:before
+                    opacity: 1
+                .plays
+                    color: #ffba00
+                    &:before
+                        content: url(../img/icons/tags-hov.png)
+                .lang-list:before
+                    content: url(../img/icons/lang-list-hov.png)
+
+            span
+                white-space: nowrap 
+                text-overflow: ellipsis
+                overflow: hidden
+                // border-bottom: 1px solid #c8ccd1
+                line-height: 1
+                font-size: 14px
+                font-weight: 700
+                text-transform: uppercase
+                letter-spacing: -0.005em
+                color: #354356
+                transition: all 0.3s ease
+    &-2 
+        .submenu-content
+            padding-bottom: 0
+        li
+            margin-bottom: 20px
+        img
+            border-radius: 0
+            +box(22px)
+            margin-right: 10px
+    &-img
+        margin-right: 10px
+        position: relative
+        img 
+            +box(36px)
+            border-radius: 50%
+        &:before
+            content: ''
+            position: absolute
+            left: 0
+            top: 0 
+            background: rgba(#ffc000,0.8) url("../img/icons/play2.png") no-repeat center / 18px
+            opacity: 0
+            z-index: 2
+            +box(100%)
+            border-radius: 50%
+            transition: all 0.3s ease
+            
+
+    &-bottom 
+        border-top: 1px solid #e8edf1
+        padding: 20px 25px
+
+.plays
+    position: relative 
+    font-size: 12px
+    line-height: 10px
+    font-weight: 400
+    text-transform: uppercase
+    letter-spacing: -0.005em
+    color: #b2b6bc
+    display: flex 
+    align-items: center
+    margin-left: auto
+    transition: all 0.3s ease
+    &:before 
+        content: url('../img/icons/tags.png')
+        margin-right: 6px
+
+.lang-list 
+    position: relative
+    +box(20px)
+    margin-right: 9px
+    &:before 
+        content: url("../img/icons/lang-list.png")
 .btn-favorites 
     font-size: 16px
     line-height: 24px
