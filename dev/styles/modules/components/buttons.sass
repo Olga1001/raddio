@@ -6,10 +6,9 @@
     border-radius: 20px
     +box(49px,34px)
     &:before 
-        +before 
-        left: 50%
-        +box(18px,15px)
-        background-image: url("../img/icons/right-arrow.svg")
+        content: url("../img/icons/right-arrow.svg")
+        +centerXY
+        +box(13px,18px)
         transform: translate(-50%,-50%) rotate(-90deg)
 
 .btn-more_tracks
@@ -25,11 +24,10 @@
     padding: 0 35px 0 11px
     margin-bottom: 25px
     &:before 
-        +before
-        left: calc(100% + 7px)
-        background: url("../img/icons/arr-more-down.png") no-repeat right center / contain
+        content: url("../img/icons/arr-more-down.svg")
+        position: absolute
         +box(9px) 
-        left: auto 
+        top: -50%
         right: 12px
         transform: translateY(-50%) rotate(-90deg)
 
@@ -48,10 +46,10 @@
     width: fit-content
     display: block
     &:before 
-        +before
+        content: url("../img/icons/arr-more-down.png")
+        +centerY
         left: calc(100% + 7px)
-        background: url("../img/icons/arr-more-down.png") no-repeat right center / contain
-        +box(9px) 
+        width: 9px
 
     &.active:before 
         transform: translateY(-50%) scaleY(-1)
@@ -85,3 +83,17 @@
     color: $black
     padding: 0 35px
     display: block
+
+.btn-update
+    background-color: #ffd800
+    line-height: 27px 
+    padding: 0 20px
+    font-size: 14px
+    font-weight: 700
+    letter-spacing: -0.005em
+    color: $black
+    border-radius: 17.5px
+    width: fit-content
+    margin-top: 15px
+    text-transform: uppercase 
+

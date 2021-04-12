@@ -16,9 +16,9 @@ h2, .title2
   color: $dark
   
 .title2
-  &:before 
-    +before
-    background-image: url("../img/icons/category.png")
+  &:before
+    content: url("../img/icons/category.png")
+    +centerY
     left: calc(100% + 14px)
     +box(23px)
 
@@ -57,9 +57,11 @@ h4, .title4
     display: block
     position: relative
     &:before 
-      +before 
-      background-image: url("../img/icons/search.svg")
-      +box(12px)
+      content: url("../img/icons/search.svg")
+      +centerY
+      left: 0
+      width: 12px
+      font-size: 16px
 
   button 
     position: absolute
@@ -77,10 +79,10 @@ h4, .title4
     button
       width: 37px
       &:before 
-        +before 
+        content: url("../img/icons/search.svg")
         +centerXY
-        background-image: url("../img/icons/search.svg")
-        +box(12px)
+        width: 12px
+        font-size: 16px
 
 .text 
   color: #5c5f62

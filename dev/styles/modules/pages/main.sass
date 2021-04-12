@@ -14,11 +14,9 @@
         position: relative 
         margin-top: 125px
         &:before 
-            +before 
-            left: 50%
-            top: auto 
+            +centerX 
             bottom: calc(100% + 5px)
-            background-image: url("../img/icons/category.png")
+            content: url("../img/icons/category.png")
             +box(35px)
             transform: translateX(-50%) rotate(-90deg)
         span 
@@ -126,9 +124,10 @@
     letter-spacing: -0.005em
     margin-bottom: 10px
     &:before 
-        +before 
-        background-image: url("../img/flags/united-kingdom.svg")
+        content: url("../img/flags/united-kingdom.svg")
         +box(14px)
+        +centerY
+        left: 0
 
 .second
     padding: 55px 0
@@ -192,10 +191,9 @@
     border-radius: 20px
     +box(49px,34px)
     &:before 
-        +before 
-        left: 50%
-        +box(18px,15px)
-        background-image: url("../img/icons/right-arrow.svg")
+        content: url("../img/icons/right-arrow.svg")
+        +centerXY
+        +box(13px,18px)
         transform: translate(-50%,-50%) rotate(-90deg)
 
 

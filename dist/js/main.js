@@ -38,8 +38,10 @@ btnMore.forEach(function (item) {
     }
   });
 });
-document.querySelector('.menu').addEventListener('click', function (e) {
-  e.stopPropagation();
+document.querySelectorAll('.stopPropagation').forEach(function (item) {
+  item.addEventListener('click', function (e) {
+    e.stopPropagation();
+  });
 }); // open pop-ups
 
 btnOpen.forEach(function (item) {
@@ -63,6 +65,7 @@ btnClose.forEach(function (item) {
   item.addEventListener('click', function () {
     modal.forEach(function (e) {
       e.classList.remove('active');
+      burger.classList.remove('active');
     });
   });
 }); //smooth scroll

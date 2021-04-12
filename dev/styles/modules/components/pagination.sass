@@ -2,9 +2,11 @@
     +box(6px, 11px)
     position: relative
     &:before 
-        +before
-        background-image: url("../img/icons/right-arrow.svg")
-        +box(9px, 11px)
+        content: url("../img/icons/right-arrow.svg") 
+        +centerY 
+        left: 0
+        font-size: 11px
+        width: 9px
     &-left
         transform: scaleX(-1)
         margin-right: 16px

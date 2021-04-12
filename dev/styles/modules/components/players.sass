@@ -4,6 +4,7 @@
     background-color: #293643
     padding: 8px 0
     overflow: hidden
+    z-index: 6
 
 .mejs__horizontal-volume-current
     background-color: #ffc000
@@ -71,11 +72,11 @@
     position: relative
     .btn-favorites
         padding-left: 0
-        background-size: 24px 22px
-        background-position-x: center
         +box(36px)
         margin-right: 51px
-        background-image: url("../img/icons/heart3.svg  ")
+        &:before 
+            content: url("../img/icons/heart3.svg ") 
+            +centerXY
     
     * 
         position: initial
@@ -108,17 +109,10 @@
     display: none
 
 .arrow-player
-    position: relative
-    background-color: #41505e
+    background: #41505e url("../img/icons/right-arrow-long.svg") no-repeat center / 16px
     +box(36px)
     border-radius: 50%
     margin: 0 24px
-    &:before 
-        +before
-        +centerXY
-        background-image: url("../img/icons/right-arrow-long.svg")
-        +box(16px)
-        background-position-x: center
     &.prev 
         transform: scaleX(-1)
 

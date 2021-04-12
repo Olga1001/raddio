@@ -5,7 +5,7 @@ header.header
                 img(src="img/logo/logo.png", alt="logo")
                 
             nav.navmenu(data-item="menu" data-close)  
-                ul.menu 
+                ul.menu.stopPropagation 
                     each val, index in [{icon: 'star', link: 'Top Station'},{icon: 'notes', link: 'Genres'},{icon: 'compass', link: 'Countries'},{icon: 'land', link: 'Languages'},]
                         li.menu-item(class=index==0 ? 'active': '')
                             a(href="#" class="icon-"+val.icon)=val.link

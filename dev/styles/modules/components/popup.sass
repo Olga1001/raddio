@@ -1,0 +1,41 @@
+.popup 
+    position: fixed 
+    top: 0
+    left: 0 
+    height: 100vh 
+    width: 100% 
+    display: inline-flex 
+    background-color: rgba($black,0.6)
+    z-index: 99
+    transition: all 0.3s ease
+    opacity: 0 
+    pointer-events: none
+    overflow-y: auto
+    padding: 15px
+    &-container 
+        max-width: 450px 
+        margin: auto 
+        background-color: $bg-white
+        padding: 20px 
+        border-radius: 15px
+        transform: translateY(-100px)
+        transition: all 0.3s ease
+    &.active 
+        opacity: 1
+        pointer-events: auto 
+        .popup-container 
+            transform: translateY(0)
+
+form 
+    label 
+        font-size: 12px 
+        letter-spacing: -0.005em
+        color: #354356
+        margin-bottom: 3px
+        span 
+            color: red
+    input 
+        margin-bottom: 20px
+    .btn 
+        text-transform: uppercase
+        margin: 30px auto 0

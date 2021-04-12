@@ -29,28 +29,30 @@
         &:hover 
             color: #96d3f6
         &:before 
-            +before
+            content: ''
+            +centerY
+            left: 0
 
         &.icon-star
             padding-left: 34px
             &:before 
-                +box(24px)
-                background-image: url("../img/icons/star.png")
+                font-size: 24px
+                content: url("../img/icons/star.png")
         &.icon-notes
             padding-left: 33px
             &:before 
-                +box(23px)
-                background-image: url("../img/icons/notes.png")
+                font-size: 23px
+                content: url("../img/icons/notes.png")
         &.icon-compass
             padding-left: 39px
             &:before 
-                +box(29px)
-                background-image: url("../img/icons/compass.png")
+                font-size: 29px
+                content: url("../img/icons/compass.png")
         &.icon-land
             padding-left: 40px
             &:before 
-                +box(30px)
-                background-image: url("../img/icons/lang.png")
+                font-size: 30px
+                content: url("../img/icons/lang.png")
         
 .logo 
     margin-right: 54px 
@@ -62,9 +64,10 @@
     margin-left: 8px
     position: relative 
     &:before 
-        +before 
-        background: url("../img/icons/arr-down.png") no-repeat center / contain
-        +box(100%)
+        content: url("../img/icons/arr-down.png")
+        +centerY 
+        left: 0
+        font-size: 10px
 
 
 .submenu 
@@ -77,8 +80,14 @@
     text-transform: uppercase
     letter-spacing: -0.01em
     color: #fbf4fc
-    background: url("../img/icons/heart.svg") no-repeat left center / contain
     padding-left: 37px 
+    position: relative
+    &:before 
+        content: url("../img/icons/heart.svg") 
+        +centerY 
+        left: 0
+        font-size: 24px
+        +box(24px)
 
 .burger
     +box(40px)
@@ -103,7 +112,7 @@
             bottom: 13px
     &.active 
         position: fixed
-        top: 13px 
+        top: 19px 
         right: 15px
         .burger-line-top
             top: 50% 

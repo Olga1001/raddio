@@ -107,9 +107,10 @@
     letter-spacing: -0.005em
     margin-bottom: 5px
     &:before 
-        +before 
-        background-image: url("../img/flags/united-kingdom.svg")
+        content: url("../img/flags/united-kingdom.svg")
         +box(14px)
+        +centerY
+        left: 0
 
 .tags 
     padding-left: 22px
@@ -117,9 +118,11 @@
     margin-bottom: 5px
 
     &:before 
-        +before 
-        background-image: url("../img/icons/note.png")
+        +centerY
+        left: 0
+        content: url("../img/icons/note.png")
         +box(14px)
+        font-size: 14px
 
 .tag 
     font-size: 12px
@@ -145,26 +148,17 @@
     span 
         position: relative 
         line-height: 19px 
-        background-color: #ffffff
         border-radius: 9.5px
         font-size: 12px
         font-weight: 400
         color: #8798a5
         padding: 0 14px 0 24px
         margin-right: 3px
+        background: $bg-white url("../img/icons/heart2.svg") no-repeat left 6px center / 14px
         
-        &:before 
-            +before 
-            background-image: url("../img/icons/heart2.svg")
-            +box(14px)
-            margin-left: 6px
-
 
 .likes, .views
-    position: relative
     padding-left: 24px
-    display: flex 
-    align-items: center
     margin-right: 10px
     font-size: 11px
     line-height: 1
@@ -173,9 +167,16 @@
     color: #37373a
     margin-bottom: 6px
     margin-top: 6px
+    position: relative
     &:before 
-        +before 
+        content: ''
+        +centerY
+        left: 0
         +box(18px)
+        background-repeat: no-repeat
+        background-position: center
+        background-size: 18px
+
 .likes
     padding-right: 5px
     &:before 

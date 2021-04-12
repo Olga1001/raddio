@@ -1,0 +1,74 @@
+extends layout/main2
+
+block variables
+	-var title = 'raddio'
+
+block content
+	main
+		section.first 
+			include modules/header/header
+
+			.container
+				h1 A wide range of online radio
+					span more than 1000 radio stations and more than 300 countries 
+
+				form.search 
+					.relative
+						input(type="text" placeholder="Find a station by name or city ....")
+						button(type="submit") search
+					p Example: 
+						a(href="#") Chill Out
+
+				ul.tabs 
+					li.active Popular radio
+					li listen now
+
+				ul.flex-wrap
+					-var n = 6
+					while n--
+						li.radios-item
+							a(href="#") 
+								img(src="img/common/pryamougolnik__skrugl_ugly_505_kopiya_1148.jpg", alt="alt")
+							.radios-item_bottom
+								a.country(href="#") United Kingdom
+								a.radios-item_name(href="#") OASIS UNIVERSAL RASDIO
+		section.second 
+			.container 
+				h2 top COUNTRY station
+				.flex-wrap 
+					-var i = 4
+					while i--
+						.card
+							.d-flex 
+								img.card_country-img(src="img/flags/netherlands_1411.png", alt="netherlands")
+								div 
+									a.card_country-name(href="#") Netherlands
+										span top 4 station
+							ul.card_list-station 
+								-var j = 4 
+								while j-- 
+									li
+										a.align-items-center(href="#") 
+											img(src="img/common/figura_26_(kopiya)_8_659.jpg", alt="figura")
+											span Pinoy Alternative Rock
+		section.third 
+			.container 
+
+				ul.tabs 
+					li random
+					li.active you listened
+
+				ul.flex-wrap
+					-var n = 6
+					while n--
+						li.radios-item
+							a(href="#") 
+								img(src="img/common/pryamougolnik__skrugl_ugly_505_kopiya_1424.jpg", alt="alt")
+							.radios-item_bottom
+								a.country(href="#") United Kingdom
+								a.radios-item_name(href="#") RADIO STATION STARS
+
+			
+
+	
+	

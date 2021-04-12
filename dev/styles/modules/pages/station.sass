@@ -98,22 +98,25 @@
     margin-left: 10px
     padding-left: 18px
     &:before
-        +before
+        +centerY 
+        left: 0
         +box(15px)
-        background-size: contain
+        font-size: 15px
 
 .icon-url:before
     +box(14px)
-    background-image: url("../img/icons/url.png")
+    font-size: 14px
+    content: url("../img/icons/url.png")
 
 .icon-lang:before
-    background-image: url("../img/icons/global.svg")
+    content: url("../img/icons/global.svg")
 
 .icon-facebook:before
-    background-image: url("../img/icons/facebook.svg")
+    content: url("../img/icons/facebook.svg")
 
 .icon-twitter:before
-    background-image: url("../img/icons/twitter.svg")
+    content: ''
+    background: url("../img/icons/twitter.svg") no-repeat center / contain
 
 .rating
     &-text
@@ -226,9 +229,11 @@
     position: relative
     padding-left: 40px
     &:before 
-        +before 
-        background-image: url("../img/icons/comment.svg")
+        +centerY 
+        left: 0 
+        content: url("../img/icons/comment.svg")
         +box(26px)
+        font-size: 26px
 
 .form-comments
     textarea 

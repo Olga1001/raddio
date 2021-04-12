@@ -105,9 +105,9 @@
     +box(25px,21px)
     position: relative
     &:before 
-        +before 
-        background-image: url("../img/icons/youtube2.svg")
-        background-size: contain
+        content: ''
+        +centerY 
+        background: url("../img/icons/youtube2.svg") no-repeat center / contain
         +box(25px,21px)
     &:hover, &.active
         &:before     
