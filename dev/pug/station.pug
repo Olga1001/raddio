@@ -249,23 +249,7 @@ block content
 				
 
 	include modules/footer/footer
-	.players
-		.container
-			.media-wrapper
-				.players-item.players-side
-					img(src="img/common/sloy_78_1207.jpg", alt="img")
-					div 
-						a(href="#") GotRadio - Classic Hits
-						p What's Love Got To Do With It - Tina Turner
-				.players-action
-					button.prev.arrow-player(type="button")
-
-					audio(preload='none' controls='' aria-label="1")
-						source(src='http://www.largesound.com/ashborytour/sound/AshboryBYU.mp3' type='audio/mp3')
-
-					button.next.arrow-player(type="button")
-				.players-side
-					button.btn-favorites(type="button")
+	include layout/players
 
 	.popup(data-item="popup-form") 
 		

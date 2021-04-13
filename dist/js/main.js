@@ -69,13 +69,7 @@ btnClose.forEach(function (item) {
       burger.classList.remove('active');
     });
   });
-}); // menuItem.forEach(function (item) {
-//     item.addEventListener('mouseover', () => {
-//        var submenu = item.getElementsByClassName('submenu');
-//        submenu.classList.toggle("slide");
-//     });
-// });
-//smooth scroll
+}); //smooth scroll
 
 var scrollToTop = function scrollToTop() {
   var c = document.documentElement.scrollTop || document.body.scrollTop;

@@ -14,6 +14,7 @@
     padding: 15px
     &-container 
         max-width: 450px 
+        width: 100% 
         margin: auto 
         background-color: $bg-white
         padding: 20px 
@@ -34,8 +35,45 @@ form
         margin-bottom: 3px
         span 
             color: red
-    input 
-        margin-bottom: 20px
+    &.popup-container
+        input 
+            margin-bottom: 20px
     .btn 
         text-transform: uppercase
         margin: 30px auto 0
+
+.popup[data-item="popup-players"]
+    img 
+        +box(90px)
+        margin-right: 10px
+        box-shadow: $shadow
+    .popup-container 
+        max-width: 900px
+    .mejs__container
+        +box(100%!important, 50px!important)
+        +centerY
+        left: 0 
+    .mejs__volume-button, .mejs__horizontal-volume-total 
+        display: none
+    .players-item 
+        padding-left: 65px
+        margin-bottom: -16px
+        a
+            color: $dark
+    .mejs__controls 
+        width: 100%
+    .mejs__time-rail
+        bottom: -10px
+        background-color: #eaeef4
+
+.popup-player
+    border: 1px solid #eaeef4
+    &_item
+        padding: 15px 15px 31px 0
+        width: 100%
+        position: relative
+
+.live
+    color: red
+    margin-left: 10px
+    font-size: 16px
