@@ -3,7 +3,6 @@
     bottom: 0
     background-color: #293643
     padding: 8px 0
-    overflow: hidden
     z-index: 6
 
 .mejs__horizontal-volume-current
@@ -41,11 +40,13 @@
         right: 0
         z-index: 3
         button 
-
             border-radius: 50%
             +box(36px)
             z-index: 1
-            background: #202c37 url("../img/icons/sound.png") no-repeat center / 26px 23px
+            background: url("../img/icons/sound.png") no-repeat center / 26px 23px
+            transition: all 0.3s ease
+            &:hover 
+                background-color: #202c37
     
 .mejs__button, .mejs__time, .mejs__time-rail, .mejs__controls
     height: fit-content
@@ -74,9 +75,13 @@
         padding-left: 0
         +box(36px)
         margin-right: 51px
+        transition: all 0.3s ease
+        border-radius: 50%
         &:before 
             content: url("../img/icons/heart3.svg ") 
             +centerXY
+        &:hover 
+            background-color: #d22c6b
     
     * 
         position: initial
@@ -88,9 +93,10 @@
         margin-top: -10px
     .mejs__time-current
         background-color: #ffc000
-    .mejs__horizontal-volume-total
-        width: 62px
-        margin-left: 36px
+    .mejs__horizontal-volume-total, .mejs__volume-current, .mejs__volume-handle, .mejs__volume-total
+        position: absolute
+    .mejs__volume-handle
+        display: none
     .mejs__horizontal-volume-slider
         position: absolute!important
         right: 0
@@ -101,7 +107,19 @@
             height: 6px
             z-index: -1
             position: absolute
-
+    .mejs__volume-total
+        background-color: #d0d9df
+        top: 0
+    .mejs__volume-total, .mejs__volume-button>.mejs__volume-slider
+        height: 65px
+        border-radius: 3px
+    .mejs__volume-button>.mejs__volume-slider
+        background-color: transparent
+    .mejs__volume-current, .mejs__volume-total
+        width: 6px
+        border-radius: 3px
+    .mejs__volume-current
+        background-color: #ffc000;
 .mejs__offscreen
     display: none
 
@@ -113,8 +131,11 @@
     +box(36px)
     border-radius: 50%
     margin: 0 24px
+    transition: all 0.3s ease
     &.prev 
         transform: scaleX(-1)
+    &:hover 
+        background-color: #202c37
 
 .players-item
     img

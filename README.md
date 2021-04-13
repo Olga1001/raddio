@@ -1,4 +1,5 @@
 # Страницы
+Перед проверкой рекомендуется очистить кеш или смотреть в инкогнито (приватное окно)
 - http://m99935yr.beget.tech/raddio
 - http://m99935yr.beget.tech/raddio/catalog.html
 - http://m99935yr.beget.tech/raddio/playlist.html
