@@ -16,8 +16,8 @@
           <div class="align-items-center"><a class="logo" href="#"> <img src="img/logo/logo.png" alt="logo"></a>
             <nav class="navmenu" data-item="menu" data-close> 
               <ul class="menu stopPropagation"> 
-                <li class="menu-item active">
-                  <div class="menu-link icon-star" href="#">Top Station<span class="arr"></span></div>
+                <li class="menu-item isActive">
+                  <div class="menu-link icon-star">Top Station<span class="arr"></span></div>
                   <div class="submenu">
                     <div class="submenu-container">
                       <div class="submenu-content">
@@ -62,7 +62,7 @@
                   </div>
                 </li>
                 <li class="menu-item">
-                  <div class="menu-link icon-notes" href="#">Genres<span class="arr"></span></div>
+                  <div class="menu-link icon-notes">Genres<span class="arr"></span></div>
                   <div class="submenu">
                     <div class="submenu-container">
                       <div class="submenu-content">
@@ -115,7 +115,7 @@
                   </div>
                 </li>
                 <li class="menu-item">
-                  <div class="menu-link icon-compass" href="#">Countries<span class="arr"></span></div>
+                  <div class="menu-link icon-compass">Countries<span class="arr"></span></div>
                   <div class="submenu submenu-2">
                     <div class="submenu-container">
                       <div class="submenu-content">
@@ -144,7 +144,7 @@
                   </div>
                 </li>
                 <li class="menu-item">
-                  <div class="menu-link icon-land" href="#">Languages<span class="arr"></span></div>
+                  <div class="menu-link icon-land">Languages<span class="arr"></span></div>
                   <div class="submenu submenu-2">
                     <div class="submenu-container">
                       <div class="submenu-content">
@@ -213,7 +213,10 @@
                       </div>
                     </div>
                     <div class="radio-info"> 
-                      <div class="align-items-center flex-wrap"><a class="country" href="#">United Kingdom, London </a>
+                      <div class="align-items-center flex-wrap">
+                        <div class="country flex-wrap"> <a href="#">United Kingdom</a>
+                          <p class="comma">, </p><a href="#">London </a>
+                        </div>
                         <p class="fm">104.2 FM</p>
                       </div>
                       <h2 class="radio-title">Smooth Jazz Mix New York</h2>
@@ -275,13 +278,17 @@
                       <p class="rating-text">Vote 991 users</p>
                     </div>
                     <div class="flex-center-center"> 
-                      <div class="weight bg-yellow">64kbps</div>
-                      <div class="weight">128kbps</div>
+                      <label>
+                        <input class="checkbox" type="radio" name="radio-weight" checked><span class="checkbox-weight">64kbps</span>
+                      </label>
+                      <label> 
+                        <input class="checkbox" type="radio" name="radio-weight"><span class="checkbox-weight">128kbps</span>
+                      </label>
                     </div>
                   </div>
                   <div>
                     <hr>
-                    <button class="btn-like mx-auto" type="button"><span class="align-items-center">like</span>298</button>
+                    <button class="btn-like mx-auto" type="button" data-open="popup-players"><span class="align-items-center">like</span>298</button>
                   </div>
                 </div>
               </div>
@@ -607,6 +614,21 @@
           <textarea name="" cols="10" rows="5" required> </textarea>
           <button class="btn" type="submit">submit</button>
         </form>
+      </div>
+      <div class="popup" data-item="popup-players">
+        <div class="popup-container">
+          <button class="close" type="reset" data-open="popup-players"></button>
+          <div class="d-flex popup-player"> <img src="img/common/sloy_78_1207.jpg" alt="img">
+            <div class="align-items-center popup-player_item">
+              <audio preload="none" controls="" aria-label="1">
+                <source src="http://www.largesound.com/ashborytour/sound/AshboryBYU.mp3" type="audio/mp3">
+              </audio>
+              <div class="players-item"> <a href="#">GotRadio - Classic Hits<span class="live">LIVE</span></a>
+                <p>What's Love Got To Do With It - Tina Turner</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <script src="js/mediaelement-and-player.min.js"></script>

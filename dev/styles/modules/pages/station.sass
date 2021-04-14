@@ -153,7 +153,7 @@
 .rate-area > label:hover ~ input:checked ~ label
     background-image: url("../img/icons/star.svg")
 
-.weight
+.checkbox-weight
     width: 64px
     line-height: 19px
     background-color: $bg-white
@@ -163,9 +163,7 @@
     color: #b5c1ca
     text-align: center
     margin: 10px 3px 0
-    &.bg-yellow 
-        color: #2a2a2c
-        font-weight: 700
+    display: block
 
 .tracks
     display: flex 
@@ -273,4 +271,8 @@
         color: $gray
         margin-bottom: 10px
 
-
+.checkbox
+    &:checked ~ .checkbox-weight
+        color: #2a2a2c
+        font-weight: 700
+        background-color: #ffd800

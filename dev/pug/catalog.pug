@@ -136,7 +136,7 @@ block content
 										.flex-wrap.playlist-info
 											.views 1 980
 											.likes 8 900
-											button.btn-like(type="button" data-open="popup-players")
+											button.btn-like(type="button" )
 												span.align-items-center like
 												| 298
 								audio(preload='none' controls='' aria-label="1")
@@ -168,19 +168,6 @@ block content
 	
 	include layout/players
 
-	.popup(data-item="popup-players")
-		.popup-container
-			button.close(type="reset" data-open="popup-players")
-			.d-flex.popup-player 
-				img(src="img/common/sloy_78_1207.jpg", alt="img")
-				.align-items-center.popup-player_item
-					audio(preload='none' controls='' aria-label="1")
-						source(src='http://www.largesound.com/ashborytour/sound/AshboryBYU.mp3' type='audio/mp3')
-
-					.players-item 
-						a(href="#") GotRadio - Classic Hits
-							span.live LIVE
-						p What's Love Got To Do With It - Tina Turner
 
 block script
 	script(src="js/mediaelement-and-player.min.js")

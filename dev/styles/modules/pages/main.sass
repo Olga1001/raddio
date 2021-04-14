@@ -200,6 +200,53 @@
 .relative 
     position: relative
 
+.btn-more
+    font-size: 13px
+    line-height: 10px
+    font-weight: 700
+    text-transform: uppercase
+    color: $gray-300
+    border-bottom: 1px solid $gray-300
+    position: relative
+    margin-left: 10px
+    margin-top: 15px
+    margin-bottom: 39px
+    width: fit-content
+    display: block
+    &:before 
+        content: url("../img/icons/arr-more-down.png")
+        +centerY
+        left: calc(100% + 7px)
+        width: 9px
+    &.active:before 
+        transform: translateY(-50%) scaleY(-1)
+
+@media only screen and (min-width : 992px)
+    .menu-item 
+        &:hover 
+            .menu-link:before 
+                content: ''
+            .submenu 
+                height: 324px
+            .menu-link
+                color: #37373a
+                &.icon-star
+                    &:after 
+                        content: url("../img/icons/star-hov.png")
+                &.icon-notes
+                    &:after 
+                        content: url("../img/icons/notes-hov.png")
+                &.icon-compass
+                    &:after 
+                        content: url("../img/icons/compass-hov.png")
+                &.icon-land
+                    &:after 
+                        content: url("../img/icons/lang-hov.png")
+            .arr:before
+                content: url(../img/icons/arr-more-down.png)
+            
+            .arr 
+                transform: scaleY(-1)
 @media (min-width : 992px) and (max-width : 1199px)
     .radios-item img
         height: 14vw
@@ -220,7 +267,6 @@
         top: 0 
         left: 0 
         height: 100vh 
-        overflow-y: auto 
         width: 100%
         background-color: rgba($black, 0.6)
         opacity: 0
@@ -233,21 +279,62 @@
                 transform: translateX(0)
     .menu 
         margin-left: auto 
+        overflow-y: auto
         width: 80% 
-        height: 100%
+        height: 100vh
         background-color: $bg-white
         transform: translateX(100px)
         transition: all 0.3s ease
         display: block
         padding-top: 65px
-        a 
+        &-link
             line-height: 45px 
             color: $black
             padding-left: 40px!important
-            border-bottom: 1px solid rgba($black,0.1)
             width: 100%
         .arr:before
-            background-image: url("../img/icons/arr-more-down.png")
+            content: url("../img/icons/arr-more-down.png")
+    .menu-item
+        display: block     
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1)
+    .submenu  
+        position: static
+        padding: 0 
+    .menu-item.active 
+        .arr 
+            transform: scaleY(-1)
+        .submenu 
+            height: 100%
+        .menu-link
+            color: #37373a
+            &.icon-star
+                &:after 
+                    content: url("../img/icons/star-hov.png")
+            &.icon-notes
+                &:after 
+                    content: url("../img/icons/notes-hov.png")
+            &.icon-compass
+                &:after 
+                    content: url("../img/icons/compass-hov.png")
+            &.icon-land
+                &:after 
+                    content: url("../img/icons/lang-hov.png")
+        .arr:before
+            content: url(../img/icons/arr-more-down.png)
+
+    .submenu-container
+        box-shadow: none 
+        padding: 0 10px
+    .submenu-content
+        padding: 0 0 20px 0
+    .submenu-title 
+        display: none
+    .submenu-content ul
+        padding-top: 0
+    .menu-item:hover .menu-link:before
+        content: none
+    // .menu-item:hover .submenu
+    //     height: 100%
     .logo
         margin-right: auto
     .radios-item
@@ -291,6 +378,12 @@
         padding: 0
         span 
             display: none
+    
+    .submenu-content li
+        width: 100% 
+        padding-right: 0
+    .submenu-2 li
+        margin-bottom: 10px
 @media only screen and (max-width : 480px)      
     .card
         width: 100% 

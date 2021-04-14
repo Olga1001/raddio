@@ -26,7 +26,10 @@ block content
 										p Rating
 								.radio-info 
 									.align-items-center.flex-wrap
-										a.country(href="#") United Kingdom, London 
+										.country.flex-wrap 
+											a(href="#") United Kingdom
+											p.comma , 
+											a(href="#") London 
 										p.fm 104.2 FM
 									h2.radio-title Smooth Jazz Mix New York
 									.align-items-center
@@ -80,12 +83,16 @@ block content
 
 									p.rating-text Vote 991 users
 								.flex-center-center 
-									.weight.bg-yellow 64kbps
-									.weight 128kbps
+									label
+										input.checkbox(type="radio" name="radio-weight" checked)
+										span.checkbox-weight 64kbps
+									label 
+										input.checkbox(type="radio" name="radio-weight")
+										span.checkbox-weight 128kbps
 							div
 								hr 
 									
-								button.btn-like.mx-auto(type="button")
+								button.btn-like.mx-auto(type="button" data-open="popup-players")
 									span.align-items-center like
 									| 298
 					p.c-dark.p-20 From the Black Eyed Peas to Usher, the Hitz Channel plays Todays Best Music, not just some of it. You'll also get a taste of the old skool mixed in for flava. The hottest music from today's hottest stars can be found right here on .977 The Hits Channel.
@@ -274,7 +281,20 @@ block content
 			textarea(name="", cols="10", rows="5" required) 
 
 			button.btn(type="submit") submit
+	
+	.popup(data-item="popup-players")
+		.popup-container
+			button.close(type="reset" data-open="popup-players")
+			.d-flex.popup-player 
+				img(src="img/common/sloy_78_1207.jpg", alt="img")
+				.align-items-center.popup-player_item
+					audio(preload='none' controls='' aria-label="1")
+						source(src='http://www.largesound.com/ashborytour/sound/AshboryBYU.mp3' type='audio/mp3')
 
+					.players-item 
+						a(href="#") GotRadio - Classic Hits
+							span.live LIVE
+						p What's Love Got To Do With It - Tina Turner
 block script
 	script(src="js/mediaelement-and-player.min.js")
 	script(src='js/audio.js')

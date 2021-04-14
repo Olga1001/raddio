@@ -5,8 +5,7 @@ var parentList = document.querySelectorAll('.list'),
     btnClose = document.querySelectorAll('[data-close]'),
     btnOpen = document.querySelectorAll('[data-open]'),
     modal = document.querySelectorAll('[data-item]'),
-    burger = document.querySelector('.burger'),
-    menuItem = document.querySelectorAll('.menu-item');
+    burger = document.querySelector('.burger');
 
 function hideList() {
   parentList.forEach(function (item) {
@@ -82,4 +81,9 @@ var scrollToTop = function scrollToTop() {
 
 document.getElementById('up').addEventListener('click', function () {
   scrollToTop();
+});
+document.querySelectorAll('.menu-link').forEach(function (item) {
+  item.addEventListener('click', function () {
+    item.parentElement.classList.toggle('active');
+  });
 });

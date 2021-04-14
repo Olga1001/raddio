@@ -18,7 +18,30 @@
 @media only screen and (min-width : 992px)
     .players-side:last-child
         justify-content: flex-end
-
+    .menu-item 
+        &:hover, &.active 
+            .menu-link:before 
+                content: ''
+            .submenu 
+                height: 324px
+            .menu-link
+                color: #37373a
+                &.icon-star
+                    &:after 
+                        content: url("../img/icons/star-hov.png")
+                &.icon-notes
+                    &:after 
+                        content: url("../img/icons/notes-hov.png")
+                &.icon-compass
+                    &:after 
+                        content: url("../img/icons/compass-hov.png")
+                &.icon-land
+                    &:after 
+                        content: url("../img/icons/lang-hov.png")
+            .arr:before
+                content: url(../img/icons/arr-more-down.png)
+            .arr 
+                transform: scaleY(-1)
 @media only screen and (min-width : 768px)
     .d-md-block
         display: block
@@ -55,6 +78,12 @@
         transform: translate(-50%, -50%) scale(0.6)
     .radio-right
         justify-content: space-around
+    .mejs__button.mejs__play > button:before
+        margin-left: 1px
+@media only screen and (max-width : 1024px)
+    .playlist .mejs__container
+        opacity: 1
+
 @media only screen and (max-width : 991px)
     .burger
         display: block
@@ -64,7 +93,6 @@
         top: 0 
         left: 0 
         height: 100vh 
-        overflow-y: auto 
         width: 100%
         background-color: rgba($black, 0.6)
         opacity: 0
@@ -78,7 +106,8 @@
     .menu 
         margin-left: auto 
         width: 80% 
-        height: 100%
+        height: 100vh
+        overflow-y: auto
         background-color: $bg-white
         transform: translateX(100px)
         transition: all 0.3s ease
@@ -97,6 +126,27 @@
     .submenu  
         position: static
         padding: 0 
+    .menu-item.active 
+        .arr 
+            transform: scaleY(-1)
+        .submenu 
+            height: 100%
+        .menu-link
+            color: #37373a
+            &.icon-star
+                &:after 
+                    content: url("../img/icons/star-hov.png")
+            &.icon-notes
+                &:after 
+                    content: url("../img/icons/notes-hov.png")
+            &.icon-compass
+                &:after 
+                    content: url("../img/icons/compass-hov.png")
+            &.icon-land
+                &:after 
+                    content: url("../img/icons/lang-hov.png")
+        .arr:before
+            content: url(../img/icons/arr-more-down.png)
     .submenu-container
         box-shadow: none 
         padding: 0 10px
@@ -153,8 +203,8 @@
         display: none
     .radio-card
         display: block!important
-    .menu-item:hover .submenu
-        height: 100%
+    // .menu-item:hover .submenu
+    //     height: 100%
 @media only screen and (max-width : 767px)
     .btn-filter
         display: block
@@ -184,14 +234,16 @@
     .mejs__button.mejs__volume-button
         position: absolute
         top: auto 
-        right: auto
         bottom: 0
         transform: none
-        left: 46px
     .arrow-player.next 
         margin-right: 0
     .players-side:last-child
         width: 100%
+        max-width: 100% 
+        display: flex 
+        justify-content: flex-end
+        margin-top: 10px
     .media-wrapper .mejs__horizontal-volume-slider
         right: auto 
         left: 43px
@@ -213,8 +265,6 @@
         width: 100%
     .radio-right .mejs__button.mejs__play > button:before
         margin-left: 3px
-    .players .mejs__button.mejs__play > button:before
-        margin-left: 0
     .right .radio-stations
         padding: 20px 15px
 @media only screen and (max-width : 575px)
@@ -248,15 +298,13 @@
     .sort 
         padding: 10px 0
     .players-action
-        width: 100% 
+        width: 70% 
         margin-top: 10px
-        justify-content: center
     .arrow-player.prev
         margin-left: 0
     .playlist .mejs__container
         transform: scale(0.5)    
         margin-right: -15px
-        opacity: 1
     .playlist-content 
         margin-right: -15px 
         width: calc(100% + 15px)
@@ -307,6 +355,13 @@
         bottom: -12px
         left: -6px
         width: calc(100% + 7px)
+    .playlist .mejs__button.mejs__play > button:before
+        border-width: 40px 0 40px 60px
+    .players-side:last-child
+        margin-top: 10px
+        width: fit-content
+    .mejs__button.mejs__volume-button
+        bottom: 2px
 @media only screen and (max-width : 374px)
     .name
         font-size: 14px

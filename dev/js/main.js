@@ -4,8 +4,7 @@ var parentList = document.querySelectorAll('.list'),
     btnClose = document.querySelectorAll('[data-close]'),
     btnOpen = document.querySelectorAll('[data-open]'),
     modal = document.querySelectorAll('[data-item]'),
-    burger = document.querySelector('.burger'),
-    menuItem = document.querySelectorAll('.menu-item');
+    burger = document.querySelector('.burger');
 
 function hideList () {
     parentList.forEach(function (item) {
@@ -53,11 +52,11 @@ btnOpen.forEach(function (item) {
         var attributeValue = item.getAttribute('data-open');
         modal.forEach(function (e) {
             var attributeValueModal = e.getAttribute('data-item');
-           
+        
             if (attributeValueModal === attributeValue){
                 e.classList.toggle('active');
                 if (attributeValue === 'menu') {
-                  
+                
                     burger.classList.toggle('active');
                 }
             }
@@ -79,11 +78,18 @@ btnClose.forEach(function (item) {
 const scrollToTop = () => {
     const c = document.documentElement.scrollTop || document.body.scrollTop;
     if (c > 0) {
-      window.requestAnimationFrame(scrollToTop);
-      window.scrollTo(0, c - c / 8);
+    window.requestAnimationFrame(scrollToTop);
+    window.scrollTo(0, c - c / 8);
     }
 };
 
 document.getElementById('up').addEventListener('click', () => {
     scrollToTop();
+});
+
+document.querySelectorAll('.menu-link').forEach(function (item) {
+    item.addEventListener('click', () => {
+        item.parentElement.classList.toggle('active');
+        
+    });
 });
