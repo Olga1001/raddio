@@ -52,22 +52,13 @@ block content
 											p.text-small.mr-10 Telephone
 											p.text-small.c-gray-400 +3789 9870 000
 										button.btn-update.mt-10(type="button" data-open="popup-form") update station
-							
-							.d-sm-none
-								.align-items-center.mt-5 
-									p.text-small.mr-10 Adress
-									p.text-small.c-gray-400 From the Black Eyed Peas to Usher
-								.align-items-center.mt-5 
-									p.text-small.mr-10 Email
-									p.text-small.c-gray-400 info@gmail.com
-								.align-items-center.mt-5
-									p.text-small.mr-10 Telephone
-									p.text-small.c-gray-400 +3789 9870 000
-								button.btn-update.mt-10(type="button" data-open="popup-form") update station
 						.radio-right
 							div
-								audio(preload='none' controls='' aria-label="1")
-									source(src='http://www.largesound.com/ashborytour/sound/AshboryBYU.mp3' type='audio/mp3')
+								.btn-play(data-src='https://static.kissfm.ua/kissfm/mp3/podcast/1014/16/2k-dj-kiss-club-mix-podkasty-15.04.21-kissfm.ua.mp3')
+									button.mejs__button.button__playpause.mejs__play(type="button" )
+									button.mejs__button.button__playpause.mejs__pause(type="button" hidden)
+									button.mejs__button.mejs__replay(type="button" hidden)
+							
 								.flex-center-center
 									.rate-area
 										input#5-star(type='radio' name='rating' value='5')
@@ -95,6 +86,19 @@ block content
 								button.btn-like.mx-auto(type="button" data-open="popup-players")
 									span.align-items-center like
 									| 298
+						
+							
+						.d-sm-none
+							.align-items-center.mt-5 
+								p.text-small.mr-10 Adress
+								p.text-small.c-gray-400 From the Black Eyed Peas to Usher
+							.align-items-center.mt-5 
+								p.text-small.mr-10 Email
+								p.text-small.c-gray-400 info@gmail.com
+							.align-items-center.mt-5
+								p.text-small.mr-10 Telephone
+								p.text-small.c-gray-400 +3789 9870 000
+							button.btn-update.mt-10(type="button" data-open="popup-form") update station
 					p.c-dark.p-20 From the Black Eyed Peas to Usher, the Hitz Channel plays Todays Best Music, not just some of it. You'll also get a taste of the old skool mixed in for flava. The hottest music from today's hottest stars can be found right here on .977 The Hits Channel.
 					
 					.tracks.flex-wrap 
@@ -153,7 +157,7 @@ block content
 					
 					section.radio-stations 
 						h4.title4 similar radio stations
-						.list.flex-wrap.slider-x_lg
+						.list.flex-wrap
 							-var n = 5
 							while n-- 
 								.radio-card.isVisible
@@ -254,8 +258,6 @@ block content
 											a.plaed-name(href="#")=val.name
 				
 				
-
-	include modules/footer/footer
 	include layout/players
 
 	.popup(data-item="popup-form") 
@@ -288,13 +290,16 @@ block content
 			.d-flex.popup-player 
 				img(src="img/common/sloy_78_1207.jpg", alt="img")
 				.align-items-center.popup-player_item
-					audio(preload='none' controls='' aria-label="1")
-						source(src='http://www.largesound.com/ashborytour/sound/AshboryBYU.mp3' type='audio/mp3')
+					audio.audio-popup(preload='none' controls='' aria-label="1")
+						source(src='https://static.kissfm.ua/kissfm/mp3/podcast/1014/16/2k-dj-kiss-club-mix-podkasty-15.04.21-kissfm.ua.mp3' type='audio/mp3')
 
 					.players-item 
 						a(href="#") GotRadio - Classic Hits
 							span.live LIVE
 						p What's Love Got To Do With It - Tina Turner
+	
+	include modules/footer/footer
+
 block script
 	script(src="js/mediaelement-and-player.min.js")
 	script(src='js/audio.js')

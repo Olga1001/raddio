@@ -6,26 +6,26 @@
     width: calc(100% - 270px)
     padding: 13px 0 13px 35px
 
-.sort 
-  display: flex 
-  flex-wrap: wrap
-  padding-top: 15px
-  padding-bottom: 18px
-  a
-    background-color: #f2f6f9
-    line-height: 28px 
-    font-size: 13px
-    font-weight: 400
-    text-transform: uppercase
-    letter-spacing: -0.005em
-    color: #b5c1ca
-    margin-right: 10px
-    padding: 0 10px
-    margin-top: 10px
-    &.active 
-      background-color: #ffd800
-      color: #2a2a2c
-      font-weight: 700
+.sort
+    display: flex
+    flex-wrap: wrap
+    padding-top: 15px
+    padding-bottom: 18px
+    a
+        background-color: #f2f6f9
+        line-height: 28px
+        font-size: 13px
+        font-weight: 400
+        text-transform: uppercase
+        letter-spacing: -0.005em
+        color: #b5c1ca
+        margin-right: 10px
+        padding: 0 10px
+        margin-top: 10px
+        &.active
+            background-color: #ffd800
+            color: #2a2a2c
+            font-weight: 700
 
 .name
     font-size: 20px
@@ -34,18 +34,19 @@
     letter-spacing: -0.005em
     color: $black
     margin-bottom: 10px
-    &:hover 
+    &:hover
         color: #0069b3
 
-.playlist 
-    display: flex 
+.playlist
+    display: flex
     align-items: center
-    width: 100% 
+    justify-content: space-between
+    width: 100%
     background-color: $bg-white
     border: 1px solid #eaeef4
     margin-bottom: 10px
     position: relative
-    &:hover 
+    &:hover
         .mejs__container
             opacity: 1
     .mejs__container
@@ -55,7 +56,7 @@
     .mejs__controls
         position: static
         padding-right: 35px!important
-    .mejs__horizontal-volume-slider, .mejs__button.mejs__volume-button, .mejs__time-rail 
+    .mejs__horizontal-volume-slider, .mejs__button.mejs__volume-button, .mejs__time-rail
         display: none
     .mejs__button button
         background-color: transparent
@@ -70,22 +71,45 @@
     .mejs__button.mejs__replay > button:before
         +box(50px)
         background-image: url("../img/icons/refresh2.svg") / contain
-    a 
+    a
         flex-shrink: 0
-    img 
-        width: 117px 
+    img
+        width: 117px
         height: 100%
         flex-shrink: 0
         background: #f2f6f9 url("../img/common/default.png") no-repeat center / contain
-        
-    &-content 
+
+    &-content
         padding: 19px 0 13px 25px
-        display: flex 
+        display: flex
         flex-direction: column
         justify-content: space-between
         width: 100%
-    &-info 
+    &-info
         align-items: center
+
+.btn-play
+    padding-right: 20px
+    button
+        +box(50px,56px)
+        position: relative
+        [hidden]
+            display: none
+        &.mejs__play
+            width: 0
+            height: 0
+            margin-left: 3px
+            border-style: solid
+            border-width: 28px 0 28px 38px
+            border-color: transparent transparent transparent #ffd800
+            
+        &.mejs__pause
+            +box(38px)
+            background-color: #ffd800
+            border: none
+        &.mejs__replay
+            +box(50px)
+            background: url("../img/icons/refresh2.svg") no-repeat center / contain
 
 .fm
     font-weight: 700
@@ -97,7 +121,7 @@
     margin-bottom: 5px
 
 .country
-    position: relative 
+    position: relative
     padding-left: 22px
     margin-left: 11px
     color: $gray
@@ -106,7 +130,7 @@
     font-weight: 400
     letter-spacing: -0.005em
     margin-bottom: 5px
-    a 
+    a
         color: $gray
         font-size: 12px
         line-height: 1
@@ -114,32 +138,32 @@
         letter-spacing: -0.005em
     .comma
         margin-right: 2px
-    &:before 
+    &:before
         content: url("../img/flags/united-kingdom.svg")
         +box(14px)
         +centerY
         left: 0
 
-.tags 
+.tags
     padding-left: 22px
-    position: relative 
+    position: relative
     margin-bottom: 5px
 
-    &:before 
+    &:before
         +centerY
         left: 0
         content: url("../img/icons/note.png")
         +box(14px)
         font-size: 14px
 
-.tag 
+.tag
     font-size: 12px
     line-height: 1
     font-weight: 400
     letter-spacing: -0.005em
     color: $gray
     padding-right: 2px
-    &:hover 
+    &:hover
         text-decoration: underline
 
 .btn-like
@@ -151,11 +175,11 @@
     padding: 3px 12px 3px 3px
     background-color: #c6d5e0
     border-radius: 12.5px
-    display: flex 
+    display: flex
     align-items: center
-    span 
-        position: relative 
-        line-height: 19px 
+    span
+        position: relative
+        line-height: 19px
         border-radius: 9.5px
         font-size: 12px
         font-weight: 400
@@ -163,7 +187,6 @@
         padding: 0 14px 0 24px
         margin-right: 3px
         background: $bg-white url("../img/icons/heart2.svg") no-repeat left 6px center / 14px
-        
 
 .likes, .views
     padding-left: 24px
@@ -176,7 +199,7 @@
     margin-bottom: 6px
     margin-top: 6px
     position: relative
-    &:before 
+    &:before
         content: ''
         +centerY
         left: 0
@@ -187,10 +210,10 @@
 
 .likes
     padding-right: 5px
-    &:before 
+    &:before
         background-image: url("../img/icons/heart2.svg")
 .views
-    &:before 
+    &:before
         background-image: url("../img/icons/play-button.svg")
 
 .btn-filter
@@ -200,5 +223,3 @@
     font-weight: 700
     +box(30px,28px)
     display: none
-
-

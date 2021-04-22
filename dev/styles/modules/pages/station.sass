@@ -7,6 +7,20 @@
         background-color: #f4f7f8
         border-radius: 4px
         display: flex
+        .btn-play
+            padding: 0
+            margin: 0 auto 10px
+            +box(89px)
+            border-radius: 50%
+            background-color: #ffd800
+            +d-flex(center)
+        .btn-play button.mejs__play
+            border-color: transparent transparent transparent $white
+            margin-left: 8px
+        .btn-play button.mejs__pause
+            background-color: $bg-white
+        .btn-play button.mejs__replay
+            background-image: url("../img/icons/refresh3.svg")
         
     &-info
         .country
@@ -89,6 +103,8 @@
                 &:before
                     +box(17px,15px)
                     margin-left: 8px
+  
+
 .link
     font-size: 13px
     line-height: 16px
@@ -213,6 +229,7 @@
             height: 151px 
             background-color: #ededed
             border-radius: 5px
+            object-fit: cover
         &_bottom 
             padding: 13px 20px 25px 20px
     &-name

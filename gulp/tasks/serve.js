@@ -7,6 +7,7 @@ const styles = require('./styles');
 const pug2html = require('./pug');
 const script = require('./scripts');
 
+
 const server = require('browser-sync').create();
 
 // Запуск сервера а также слежка за файлами

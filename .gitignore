@@ -4,3 +4,5 @@ node_modules
 .idea
 files
 /*.exe.stackdump
+/dev/music/*.mp3
+/dist/music/*.mp3

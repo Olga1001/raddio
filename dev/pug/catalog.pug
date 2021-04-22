@@ -117,7 +117,7 @@ block content
 						button.btn-filter(type="button" data-open="sidebar") 
 
 					ul.playlists 
-						-var n = 8
+						-var n = 1
 						while n--
 							li.playlist 
 								.d-flex
@@ -139,29 +139,35 @@ block content
 											button.btn-like(type="button" )
 												span.align-items-center like
 												| 298
-								audio(preload='none' controls='' aria-label="1")
-									source(src='http://www.largesound.com/ashborytour/sound/AshboryBYU.mp3' type='audio/mp3')
-						li.playlist 
-							a(href="#") 
-								img(src="img/common/sloy_78_1207.jpg" alt="img")
-							.playlist-content 
-								div
-									a.name(href="#") GotRadio - Classic Hits
-									.flex-wrap
+								.btn-play(data-src='https://static.kissfm.ua/kissfm/mp3/podcast/1014/16/2k-dj-kiss-club-mix-podkasty-15.04.21-kissfm.ua.mp3')
+									button.mejs__button.button__playpause.mejs__play(type="button")
+									button.mejs__button.button__playpause.mejs__pause(type="button" hidden)
+									button.mejs__button.mejs__replay(type="button" hidden)
+									
+							li.playlist 
+								.d-flex
+									a(href="#") 
+										img(src="img/common/sloy_78_1207.jpg" alt="img")
+									.playlist-content 
+										div
+											a.name(href="#") GotRadio - Classic Hits
+											.flex-wrap
 
-										.align-items-center.tags
-											a.tag(href="#") Chillout, 
-											a.tag(href="#") Relax
-										a.country(href="#") United Kingdom, London 
-										p.fm 104.2 FM
-								.flex-wrap.playlist-info
-									.views 1 980
-									.likes 8 900
-									button.btn-like(type="button" data-open="popup-players")
-										span.align-items-center like
-										| 298
-							audio(preload='none' controls='' aria-label="1")
-								source(src='http://www.largesound.com/ashborytour/sound/AshboryBYU.mp3' type='audio/mp3')
+												.align-items-center.tags
+													a.tag(href="#") Chillout, 
+													a.tag(href="#") Relax
+												a.country(href="#") United Kingdom, London 
+												p.fm 104.2 FM
+										.flex-wrap.playlist-info
+											.views 1 980
+											.likes 8 900
+											button.btn-like(type="button" )
+												span.align-items-center like
+												| 298
+								.btn-play(data-src='http://www.largesound.com/ashborytour/sound/AshboryBYU.mp3')
+									button.mejs__button.button__playpause.mejs__play(type="button" )
+									button.mejs__button.button__playpause.mejs__pause(type="button" hidden)
+									button.mejs__button.mejs__replay(type="button" hidden)
 					+pagination(adjacents, 280, 10, currentPage, base, arrow)
 
 	include modules/footer/footer

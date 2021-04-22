@@ -189,9 +189,8 @@
         .right 
             width: 100%
     .radio-card img
-        height: 171px
+        height: 17.2vw
     .radio-card
-        width: 171px 
         flex-shrink: 0
     .slider-x_lg
         width: calc(100% + 30px)
@@ -199,10 +198,6 @@
         flex-wrap: nowrap
         margin: 0 -15px
         padding: 0 15px 25px
-    .radio-stations .btn-more
-        display: none
-    .radio-card
-        display: block!important
     // .menu-item:hover .submenu
     //     height: 100%
 @media only screen and (max-width : 767px)
@@ -255,8 +250,14 @@
         padding-right: 0
     .right 
         width: 100%
-    .radio-card
+    .radio-card, .radio-card:nth-child(5n+5)
         margin-right: 15px
+        width: calc(25% - 12px)
+    .radio-card
+        &:nth-child(4n+4)
+            margin-right: 0
+    .radio-card img 
+        height: 22.2vw
     .tracks .plaed-list
         max-width: 100%
     .radio-block
@@ -362,6 +363,24 @@
         width: fit-content
     .mejs__button.mejs__volume-button
         bottom: 2px
+    
+    .radio-card, .radio-card:nth-child(5n+5), .radio-card:nth-child(4n+4)
+        margin-right: 10px
+        margin-top: 10px
+        width: calc(50% - 5px)
+    .radio-card:nth-child(2n+2)
+            margin-right: 0
+    .radio-card img 
+        height: 44.2vw
+    .radio-card_bottom
+        padding: 13px 10px 15px 10px
+    .radio-block 
+        position: relative
+    .btn-play
+        padding-right: 10px
+    .btn-play button.mejs__play
+        border-width: 18px 0 18px 28px 
+
 @media only screen and (max-width : 374px)
     .name
         font-size: 14px

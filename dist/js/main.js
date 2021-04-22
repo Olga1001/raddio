@@ -18,7 +18,26 @@ function hideList() {
   });
 }
 
-hideList(); // function showList () {}
+hideList();
+
+function showStationList() {
+  var parentListStations = document.querySelector('.radio-stations .list');
+  var childStation = parentListStations.children;
+
+  if (window.matchMedia("(max-width: 767px)").matches) {
+    for (var i = 4; i < childStation.length; i++) {
+      childStation[i].classList.remove('isVisible');
+      childStation[i].classList.add('d-none');
+    }
+  } else {
+    hideList();
+  }
+}
+
+if (document.querySelector('.radio-stations .list')) {
+  showStationList();
+} // function showList () {}
+
 
 btnMore.forEach(function (item) {
   item.addEventListener('click', function () {
