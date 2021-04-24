@@ -109,3 +109,15 @@ document.querySelectorAll('.menu-link').forEach(function (item) {
         
     });
 });
+
+//tabs
+document.querySelectorAll('.tabs li[data-tab]').forEach((item) => {
+    item.addEventListener('click', (e) => {
+        document.querySelectorAll(`.content ul[data-tab="${item.dataset.tab}"]`).forEach((el) => {
+            e.target.parentElement.querySelectorAll('.active').forEach( e => e.classList.remove('active'));
+            e.target.classList.add('active');
+            el.parentElement.querySelectorAll('.active').forEach( e => e.classList.remove('active'));
+            el.classList.add('active');
+        });
+    });
+});

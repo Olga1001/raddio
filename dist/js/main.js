@@ -105,4 +105,19 @@ document.querySelectorAll('.menu-link').forEach(function (item) {
   item.addEventListener('click', function () {
     item.parentElement.classList.toggle('active');
   });
+}); //tabs
+
+document.querySelectorAll('.tabs li[data-tab]').forEach(function (item) {
+  item.addEventListener('click', function (e) {
+    document.querySelectorAll(".content ul[data-tab=\"".concat(item.dataset.tab, "\"]")).forEach(function (el) {
+      e.target.parentElement.querySelectorAll('.active').forEach(function (e) {
+        return e.classList.remove('active');
+      });
+      e.target.classList.add('active');
+      el.parentElement.querySelectorAll('.active').forEach(function (e) {
+        return e.classList.remove('active');
+      });
+      el.classList.add('active');
+    });
+  });
 });

@@ -221,6 +221,11 @@
     &.active:before 
         transform: translateY(-50%) scaleY(-1)
 
+.content
+    ul 
+        display: none
+        &.active 
+            display: flex
 @media only screen and (min-width : 992px)
     .menu-item 
         &:hover 
@@ -378,7 +383,8 @@
         padding: 0
         span 
             display: none
-    
+    .burger.active
+        top: 13px
     .submenu-content li
         width: 100% 
         padding-right: 0
