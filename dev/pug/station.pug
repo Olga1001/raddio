@@ -62,16 +62,16 @@ block content
 								
 									.flex-center-center
 										.rate-area
-											input#5-star(type='radio' name='rating' value='5')
-											label(for='5-star' title='Amazing') 
-											input#4-star(type='radio' name='rating' value='4')
-											label(for='4-star' title='Good') 
-											input#3-star(type='radio' name='rating' value='3')
-											label(for='3-star' title='Average')
-											input#2-star(type='radio' name='rating' value='2')
-											label(for='2-star' title='Not Good') 
-											input#1-star(type='radio' name='rating' value='1')
-											label(for='1-star' title='Bad')
+											input#5-star3(type='radio' name='rating' value='5')
+											label(for='5-star3' title='Amazing') 
+											input#4-star3(type='radio' name='rating' value='4')
+											label(for='4-star3' title='Good') 
+											input#3-star3(type='radio' name='rating' value='3')
+											label(for='3-star3' title='Average')
+											input#2-star3(type='radio' name='rating' value='2')
+											label(for='2-star3' title='Not Good') 
+											input#1-star3(type='radio' name='rating' value='1')
+											label(for='1-star3' title='Bad')
 
 										p.rating-text Vote 991 users
 									.flex-center-center 
@@ -182,40 +182,40 @@ block content
 							a.add-comment(href="#") Add comment
 						form.align-items-center.pl-40.mt-24
 							.rate-area.big
-								input#5-star(type='radio' name='ratingadd' value='5')
-								label(for='5-star' title='Amazing') 
-								input#4-star(type='radio' name='ratingadd' value='4')
-								label(for='4-star' title='Good') 
-								input#3-star(type='radio' name='ratingadd' value='3')
-								label(for='3-star' title='Average')
-								input#2-star(type='radio' name='ratingadd' value='2')
-								label(for='2-star' title='Not Good') 
-								input#1-star(type='radio' name='ratingadd' value='1')
-								label(for='1-star' title='Bad')
+								input#5-star1(type='radio' name='ratingadd' value='5')
+								label(for='5-star1' title='Amazing') 
+								input#4-star1(type='radio' name='ratingadd' value='4')
+								label(for='4-star1' title='Good') 
+								input#3-star1(type='radio' name='ratingadd' value='3')
+								label(for='3-star1' title='Average')
+								input#2-star1(type='radio' name='ratingadd' value='2')
+								label(for='2-star1' title='Not Good') 
+								input#1-star1(type='radio' name='ratingadd' value='1')
+								label(for='1-star1' title='Bad')
 
 							p.rating-text Set your rating
 						.form-comments
-							textarea(name="", cols="20", rows="5") Comments ...
+							textarea(cols="20", rows="5") Comments ...
 							button.btn.ml-auto(type="submit") Send
 						
 						ul.comments-list.list 
-							each val in ['1','2','3'] 
+							each val in ['2','5','6'] 
 								li.isVisible 
 									.d-flex
 										img.comments_avatar(src="img/icons/profile-user.svg", alt="avatar")
 										div 
 											.align-items-center
 												.rate-area
-													input#5-star(type='radio' name='rating-'+val value='5' checked)
-													label(for='5-star' title='Amazing') 
-													input#4-star(type='radio' name='rating-'+val  value='4' checked)
-													label(for='4-star' title='Good') 
-													input#3-star(type='radio' name='rating-'+val  value='3' checked)
-													label(for='3-star' title='Average')
-													input#2-star(type='radio' name='rating-'+val  value='2')
-													label(for='2-star' title='Not Good') 
-													input#1-star(type='radio' name='rating-'+val  value='1')
-													label(for='1-star' title='Bad')
+													input(id="5-star"+val type='radio' name='rating-'+val value='5' checked)
+													label(for='5-star'+val title='Amazing') 
+													input(id="4-star"+val type='radio' name='rating-'+val  value='4' checked)
+													label(for='4-star'+val title='Good') 
+													input(id="3-star"+val type='radio' name='rating-'+val  value='3' checked)
+													label(for='3-star'+val title='Average')
+													input(id="2-star"+val type='radio' name='rating-'+val  value='2')
+													label(for='2-star'+val title='Not Good') 
+													input(id="1-star"+val type='radio' name='rating-'+val  value='1')
+													label(for='1-star'+val title='Bad')
 												p.comments_user eleonora
 												p.comments_date 12.02.2020 
 											p.comments_text From the Black Eyed Peas to Usher, the Hitz Channel plays Todays Best Music, not just some of it. You'll also get a taste of the old skool mixed in for flava. The hottest music from today's hottest stars
@@ -226,16 +226,16 @@ block content
 									div 
 										.align-items-center
 											.rate-area
-												input#5-star(type='radio' name='rating' value='5' checked)
-												label(for='5-star' title='Amazing') 
-												input#4-star(type='radio' name='rating' value='4' checked)
-												label(for='4-star' title='Good') 
-												input#3-star(type='radio' name='rating' value='3' checked)
-												label(for='3-star' title='Average')
-												input#2-star(type='radio' name='rating' value='2')
-												label(for='2-star' title='Not Good') 
-												input#1-star(type='radio' name='rating' value='1')
-												label(for='1-star' title='Bad')
+												input#5-star4(type='radio' name='rating' value='5' checked)
+												label(for='5-star4' title='Amazing') 
+												input#4-star4(type='radio' name='rating' value='4' checked)
+												label(for='4-star4' title='Good') 
+												input#3-star4(type='radio' name='rating' value='3' checked)
+												label(for='3-star4' title='Average')
+												input#2-star4(type='radio' name='rating' value='2')
+												label(for='2-star4' title='Not Good') 
+												input#1-star4(type='radio' name='rating' value='1')
+												label(for='1-star4' title='Bad')
 											p.comments_user eleonora
 											p.comments_date 12.02.2020 
 										p From the Black Eyed Peas to Usher, the Hitz Channel plays Todays Best Music, not just some of it. You'll also get a taste of the old skool mixed in for flava. The hottest music from today's hottest stars
@@ -281,7 +281,7 @@ block content
 			label 
 				span *
 				| Description
-			textarea(name="", cols="10", rows="5" required) 
+			textarea(cols="10", rows="5" required) 
 
 			button.btn(type="submit") submit
 	
